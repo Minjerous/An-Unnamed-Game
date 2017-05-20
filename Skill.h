@@ -1,4 +1,6 @@
-﻿#include <string>
+﻿#ifndef SKILL_H
+#define SKILL_H
+#include <string>
 using namespace std;
 
 class Skill
@@ -28,3 +30,4 @@ private:
 	int level;
 	int levelupmoney;
 };
+#endif

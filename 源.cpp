@@ -936,7 +936,7 @@ void System_Save_Show()
 void System_About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.22" << endl;
+	cout << "版本：1.23" << endl;
 	cout << "官网：http://www.211tzbd.tk" << endl;
 	system("pause");
 	system("cls");
@@ -1062,6 +1062,7 @@ void Fighting(Boss boss)
 		cout << "\t" << fight_boss_hp << "/" << boss.getHp() << endl;
 		cout << " ——————————" << endl;
 		cout << "\t" << "护盾：" << fight_boss_shield << endl << endl;
+		//判断胜负
 		if (fight_role_hp == 0)
 		{
 			cout << "你失败了" << endl;
@@ -1093,22 +1094,32 @@ void Fighting(Boss boss)
 			{
 				if (skill_1.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_1);
+				else
+					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
 			}
 			else if (anjian == 2)
 			{
 				if (skill_2.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_2);
+				else
+					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
 			}
 			else if (anjian == 3)
 			{
 				if (skill_3.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_3);
+				else
+					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
 			}
 			else if (anjian == 4)
 			{
 				if (skill_4.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_4);
+				else
+					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
 			}
+			else
+				cout << "状态：没有该技能位，I am very happy that you wasted an opportunity." << endl;
 		}
 		else//Boss战斗
 		{

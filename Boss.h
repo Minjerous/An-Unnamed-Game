@@ -1,4 +1,6 @@
-﻿#include <string>
+﻿#ifndef BOSS_H
+#define BOSS_H
+#include <string>
 #include "Skill.h"
 using namespace std;
 class Boss
@@ -25,3 +27,4 @@ private:
 	const unsigned int exp;
 	const unsigned int money;
 };
+#endif

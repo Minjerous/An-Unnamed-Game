@@ -1,4 +1,6 @@
-﻿#include <string>
+﻿#ifndef OBJECT_DJ_H
+#define OBJECT_DJ_H
+#include <string>
 using namespace std;
 
 class Object_dj
@@ -27,3 +29,4 @@ private:
 	const int order;//顺序
 
 };
+#endif

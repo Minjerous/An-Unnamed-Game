@@ -1,4 +1,6 @@
-﻿#include <string>
+﻿#ifndef GUANQIA_H
+#define GUANQIA_H
+#include <string>
 using namespace std;
 class Guanqia
 {
@@ -14,3 +16,4 @@ private:
 	bool kaiqi;
 
 };
+#endif
