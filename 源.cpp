@@ -41,7 +41,7 @@ void CheckName()
 
 int main()
 {
-	Version(1.03f);
+	Version(1.035f);
 
 	CheckName();
 
