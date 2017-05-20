@@ -2,28 +2,29 @@
 #include <iostream>
 #include "Skill.h"
 using namespace std;
-Skill::Skill(string _name, int _hurt, int _type, int _mp, int _levelupmoney, int _level) :name(_name), hurt(_hurt), type(_type), mp(_mp), levelupmoney(_levelupmoney), level(_level){}
-string Skill::getName()
+Skill::Skill(string _name, int _hurt, int _type, int _mp, int _levelupmoney, int _level) :
+	name(_name), hurt(_hurt), type(_type), mp(_mp), levelupmoney(_levelupmoney), level(_level){}
+string Skill::getName() const
 {
 	return name;
 }
-int Skill::getHurt()
+int Skill::getHurt() const
 {
 	return hurt; 
 }
-int Skill::getType()
+int Skill::getType() const
 {
 	return type;
 }
-int Skill::getMp()
+int Skill::getMp() const
 {
 	return mp;
 }
-int Skill::getLevel()
+int Skill::getLevel() const
 {
 	return level;
 }
-int Skill::getLevelupmoney()
+int Skill::getLevelupmoney() const
 {
 	return levelupmoney;
 }

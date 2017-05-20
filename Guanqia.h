@@ -3,13 +3,13 @@ using namespace std;
 class Guanqia
 {
 public:
-	int getKaiqi();
+	int getKaiqi() const;
 	Guanqia(int _number, string _name, bool _kaiqi = false, bool _zhanling = false);
-	void get();
+	void get() const;
 	void set(bool _zhanling, bool _kaiqi); 
 private:
-	int number;
-	string name;
+	const int number;
+	const string name;
 	bool zhanling;
 	bool kaiqi;
 

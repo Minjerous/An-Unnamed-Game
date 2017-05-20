@@ -13,14 +13,14 @@ string Name;
 int Hp = 50, Mp = 50, GongJi = 10, FangYu = 0,BaoJi=0;
 int Level = 1, Exp = 0, MaxExp = 10;
 int Money = 0;
-//Skill 对象( _名称, _伤害, _类型,_耗魔 = 0, _升级花费 = 0,_等级 = 0) :名称(_名称), 伤害(_伤害), 类型(_类型)，耗魔(_耗魔), 等级(_等级){}
+//Skill 对象( _名称 = "", _伤害 = 0, _类型 = 0,_耗魔 = 0, _升级花费 = 0,_等级 = 0) :名称(_名称), 伤害(_伤害), 类型(_类型)，耗魔(_耗魔), 等级(_等级){}
 //类型：1.攻击 2.护盾 3.加血
-Skill skill_1("", 0, 0);
-Skill skill_2("", 0, 0);
-Skill skill_3("", 0, 0);
-Skill skill_4("", 0, 0);
-Skill putonggongji("普通攻击", 80, 1,0,100,1);
-Skill zhuangji("撞击", 50, 1,2,10);
+const Skill putonggongji("普通攻击", 80, 1, 0, 100, 1); 
+const Skill zhuangji("撞击", 50, 1, 2, 10);
+Skill skill_1(putonggongji);
+Skill skill_2;
+Skill skill_3;
+Skill skill_4;
 //Guanqia 对象( _序号,  _名称,  _是否开启 = 0,  _是否占领 = 0) :序号(_序号), 名称(_名称), 是否开启_是否开启), 是否占领(_是否占领){}
 Guanqia a_a(1, "大操场  ",1); 
 Guanqia a_b(2, "大门    ");
@@ -33,7 +33,7 @@ Guanqia a_h(8, "教学楼  ");
 Guanqia a_i(9, "食堂    ");
 Guanqia a_j(10, "女生宿舍");
 //Boss 对象( 名称,  生命,  攻击,  防御,  获得经验,  掉落钢镚子,技能1名称,技能1伤害,技能1类型,技能2名称,技能2伤害,技能2类型,技能3名称,技能3伤害,技能3类型,技能4名称,技能4伤害,技能4类型,):名称(_名称), 生命(_生命), 攻击(_攻击), 防御(_防御), 获得经验(_获得经验), 掉落钢镚子(_掉落钢镚子){}
-Boss kanmendashu("看门大叔", 100, 10, 0, 5, 5, "呼叫120", 50, 3, "关门", 60, 2, "呼叫120", 50, 3, "关门", 60, 2);
+const Boss kanmendashu("看门大叔", 100, 10, 0, 5, 5, "呼叫120", 50, 3, "关门", 60, 2, "呼叫120", 50, 3, "关门", 60, 2);
 //Object_dj 对象( _名称, _说明,  _售价, _ID号, _数量 = 0, _序号 = 0) :名称(_名称), 说明(_说明), 售价(_售价), 编号(_编号)，数量(_数量), 序号(_序号){}
 Object_dj bag_1("", "", 0, 0, 0, 1);
 Object_dj bag_2("", "", 0, 0, 0, 2);
@@ -44,9 +44,9 @@ Object_dj bag_6("", "", 0, 0, 0, 6);
 Object_dj bag_7("", "", 0, 0, 0, 7);
 Object_dj bag_8("", "", 0, 0, 0, 8);
 Object_dj bag_9("", "", 0, 0, 0, 9);
-Object_dj xuantie("玄铁","在炼丹炉内打造装备所需的材料",2,1);
-Object_dj sichou("丝绸", "在炼丹炉内打造装备所需的材料", 2,2);
-Object_dj tanmu("檀木", "在炼丹炉内打造装备所需的材料", 2,3);
+const Object_dj xuantie("玄铁", "在炼丹炉内打造装备所需的材料", 2, 1);
+const Object_dj sichou("丝绸", "在炼丹炉内打造装备所需的材料", 2, 2);
+const Object_dj tanmu("檀木", "在炼丹炉内打造装备所需的材料", 2, 3);
 
 void Role_Show(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_); 
 void Role_CheckName();
@@ -936,7 +936,7 @@ void System_Save_Show()
 void System_About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.21" << endl;
+	cout << "版本：1.22" << endl;
 	cout << "官网：http://www.211tzbd.tk" << endl;
 	system("pause");
 	system("cls");

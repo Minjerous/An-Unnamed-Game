@@ -2,13 +2,14 @@
 #include "Guanqia.h"
 using namespace std;
 
-Guanqia::Guanqia(int _number, string _name, bool _kaiqi,bool _zhanling) :number(_number), name(_name), kaiqi(_kaiqi), zhanling(_zhanling){}
+Guanqia::Guanqia(int _number, string _name, bool _kaiqi,bool _zhanling) :
+	number(_number), name(_name), kaiqi(_kaiqi), zhanling(_zhanling){}
 
-int Guanqia::getKaiqi()
+int Guanqia::getKaiqi() const
 {
 		return kaiqi;
 }
-void Guanqia::get()
+void Guanqia::get() const
 {
 	cout << number << ")\t" << name << "\t";
 	if (kaiqi == true)//判断是否开启或占领并输出 

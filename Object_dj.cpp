@@ -1,29 +1,30 @@
 ﻿#include <string>
 #include "Object_dj.h"
 
-Object_dj::Object_dj(string _name, string _explain, int _price, int _id, int _number, int _order) :name(_name), explain(_explain), price(_price), id(_id),number(_number),order(_order){}
+Object_dj::Object_dj(string _name, string _explain, int _price, int _id, int _number, int _order) :
+	name(_name), explain(_explain), price(_price), id(_id),number(_number),order(_order){}
 
-int Object_dj::getID()
+int Object_dj::getID() const
 {
 	return id;
 }
-int Object_dj::getNumber()
+int Object_dj::getNumber() const
 {
 	return number;
 }
-int Object_dj::getOrder()
+int Object_dj::getOrder() const
 {
 	return order;
 }
-int Object_dj::getPrice()
+int Object_dj::getPrice() const
 {
 	return price;
 }
-string Object_dj::getName()
+string Object_dj::getName() const
 {
 	return name;
 }
-string Object_dj::getExplain()
+string Object_dj::getExplain() const
 {
 	return explain;
 }

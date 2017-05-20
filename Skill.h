@@ -4,13 +4,13 @@ using namespace std;
 class Skill
 {
 public:
-	Skill(string _name, int _hurt, int _type, int _mp = 0, int _levelupmoney = 0, int _level = 0);
-	string getName();
-	int getHurt();
-	int getType();
-	int getMp();
-	int getLevel();
-	int getLevelupmoney();
+	Skill(string _name = "", int _hurt = 0, int _type = 0, int _mp = 0, int _levelupmoney = 0, int _level = 0);
+	string getName() const;
+	int getHurt() const;
+	int getType() const;
+	int getMp() const;
+	int getLevel() const;
+	int getLevelupmoney() const;
 
 	void setName(string _name);
 	void setHurt(int _hurt);
