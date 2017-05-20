@@ -4,7 +4,7 @@ class Guanqia
 {
 public:
 	int getKaiqi();
-	Guanqia(int _number, string _name, int _kaiqi = false, int _zhanling = false);
+	Guanqia(int _number, string _name, bool _kaiqi = false, bool _zhanling = false);
 	void get();
 	void set(bool _zhanling, bool _kaiqi); 
 private:

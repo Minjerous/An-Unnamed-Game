@@ -72,7 +72,7 @@ int main()
 {
 	//初始化随机数种子
 	srand(time(0));
-	//开始定义Boss技能	1:攻击 2:护盾 3:加血
+	//开始定义Boss技能	名称，威力，类型(1:攻击 2:护盾 3:加血)
 	kanmendashu.setSkill1("呼叫120", 50,3);
 	kanmendashu.setSkill2("关门", 60,2);
 	kanmendashu.setSkill3("呼叫120", 50, 3);
@@ -137,7 +137,7 @@ void Role_Show(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Ex
 	cout << "魔法值:" << Mp << "；\n\n";
 	cout << "攻击力:" << GongJi << "；\n";
 	cout << "防御力:" << FangYu << "；\n\n";
-	cout << "暴击率" << BaoJi << "；\n\n";
+	cout << "暴击率:" << BaoJi << "%；\n\n";
 	cout << "等级:" << Level << "级；\n";
 	cout << "经验值:" << Exp << "/" << MaxExp << "；\n";
 	cout << endl;
@@ -150,7 +150,7 @@ void Role_CheckName()
 	cin >> Name;
 	if (Name == "肖海洋" || Name == "海洋" || Name == "xiaohaiyang" || Name == "XIAOHAIYANG" || Name == "haiyang" || Name == "HAIYANG" || Name == "海洛之神")
 	{
-		cout << "海洋，看见我地理课本了吗？\n海洋，看见我生物课本了吗？\n\n";
+		cout << "海洋，看见我地理课本了吗？\n\n";
 	}
 	else if (Name == "肖培成" || Name == "培成" || Name == "xiaopeicheng" || Name == "XIAOPEICHENG" || Name == "peicheng" || Name == "PEICHENG")
 	{
@@ -166,11 +166,15 @@ void Role_CheckName()
 	}
 	else if (Name == "刘希涛" || Name == "希涛" || Name == "liuxitao" || Name == "LIUXITAO" || Name == "xitao" || Name == "XITAO")
 	{
-		cout << "希涛，看见我物理配套来没？？？\n\n";
+		cout << "希涛，别忘了欠我三包馍馍干\n\n";
 	}
 	else if (Name == "孔龙" || Name == "恐龙" || Name == " konglong" || Name == "KONGLONG")
 	{
 		cout << "这是一个彩蛋，不是恐龙蛋。。。\n\n";
+	}
+	else if (Name == "齐伟" || Name == "qiwei" || Name == " QIWEI" || Name == "QiWei" || Name == "Qi Wei" || Name == "qi wei" || Name == "QI WEI")
+	{
+		cout << "君所欲之网已毕，址者，http://211tzbd.tk/qiwei.html 也。\n\n";
 	}
 	else
 	{
@@ -552,7 +556,7 @@ void Bag_Show_dj(Object_dj *dj)
 void About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.17" << endl;
+	cout << "版本：1.18" << endl;
 	cout << "官网：http://211tzbd.tk" << endl;
 	system("pause");
 	system("cls");
@@ -1087,14 +1091,14 @@ void Fighting(Boss boss)
 				{
 					if (rand()%100 < BaoJi)//如果暴击
 					{
-						fight_boss_hp = fight_boss_hp - ((putonggongji.getHurt() * GongJi / 50 - boss.getFangyu() - fight_boss_shield));
+						fight_boss_hp -= (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu() - fight_boss_shield) > fight_boss_hp ? fight_boss_hp : (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu() - fight_boss_shield);
 						cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << putonggongji.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
 						cout << "由于对方拥有护盾，你实际造成了" << (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu()) - fight_boss_shield << "点伤害" << endl;
 						fight_boss_shield = 0;
 					}
 					else//如果没暴击
 					{
-						fight_boss_hp = fight_boss_hp - ((putonggongji.getHurt() * GongJi / 100 - boss.getFangyu() - fight_boss_shield));
+						fight_boss_hp -= (putonggongji.getHurt() * GongJi / 100 - boss.getFangyu() - fight_boss_shield) > fight_boss_hp ? fight_boss_hp : (putonggongji.getHurt() * GongJi / 100 - boss.getFangyu() - fight_boss_shield);
 						cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << putonggongji.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
 						cout << "由于对方拥有护盾，你实际造成了" << (putonggongji.getHurt() * GongJi / 100 - boss.getFangyu()) - fight_boss_shield << "点伤害" << endl;
 						fight_boss_shield = 0;
@@ -1104,13 +1108,13 @@ void Fighting(Boss boss)
 				{
 					if (rand() % 100 < BaoJi)//如果暴击
 					{
-						fight_boss_hp -= putonggongji.getHurt() * GongJi / 50 - boss.getFangyu();
+						fight_boss_hp -= (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu()) > fight_boss_hp ? fight_boss_hp : (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu());
 						cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << putonggongji.getHurt() * GongJi / 50 << "点伤害," << endl;
 					}
 					else//如果没暴击
 					{
-						fight_boss_hp -= putonggongji.getHurt() * GongJi / 100 - boss.getFangyu();
-						cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << putonggongji.getHurt() * GongJi / 100 << "点伤害," << endl;
+						fight_boss_hp -= (putonggongji.getHurt() * GongJi / 50 - boss.getFangyu()) > fight_boss_hp ? fight_boss_hp : (putonggongji.getHurt() * GongJi / 100 - boss.getFangyu());
+						cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << putonggongji.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害," << endl;
 					}
 				}
 			}

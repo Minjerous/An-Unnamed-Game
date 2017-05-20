@@ -2,7 +2,7 @@
 #include "Guanqia.h"
 using namespace std;
 
-Guanqia::Guanqia(int _number, string _name, int _kaiqi,int _zhanling) :number(_number), name(_name), kaiqi(_kaiqi), zhanling(_zhanling){}
+Guanqia::Guanqia(int _number, string _name, bool _kaiqi,bool _zhanling) :number(_number), name(_name), kaiqi(_kaiqi), zhanling(_zhanling){}
 
 int Guanqia::getKaiqi()
 {

@@ -4,11 +4,11 @@ class Boss
 {
 public:
 	Boss(string _name, unsigned int _Hp, unsigned int _Gongji, unsigned int _Fangyu, unsigned int _exp, unsigned int _money);
-	int getHp();
-	int getGongji();
-	int getFangyu();
-	int getExp();
-	int getMoney();
+	unsigned int getHp();
+	unsigned int getGongji();
+	unsigned int getFangyu();
+	unsigned int getExp();
+	unsigned int getMoney();
 	string getName();
 
 

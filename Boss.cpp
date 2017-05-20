@@ -3,7 +3,7 @@
 
 Boss::Boss(string _name, unsigned int _hp, unsigned int _gongji, unsigned int _fangyu, unsigned  int _exp, unsigned int _money):name(_name), hp(_hp), gongji(_gongji), fangyu(_fangyu), exp(_exp), money(_money){}
 
-int Boss::getHp()
+unsigned int Boss::getHp()
 {
 	return hp;
 }
@@ -11,19 +11,19 @@ string Boss::getName()
 {
 	return name;
 }
-int Boss::getGongji()
+unsigned int Boss::getGongji()
 {
 	return gongji;
 }
-int Boss::getFangyu()
+unsigned int Boss::getFangyu()
 {
 	return fangyu;
 }
-int Boss::getExp()
+unsigned int Boss::getExp()
 {
 	return exp;
 }
-int Boss::getMoney()
+unsigned int Boss::getMoney()
 {
 	return money;
 }
