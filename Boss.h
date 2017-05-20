@@ -20,6 +20,7 @@ public:
 	string skill2_name; int skill2_hurt; int skill2_type;
 	string skill3_name; int skill3_hurt; int skill3_type;
 	string skill4_name; int skill4_hurt; int skill4_type;
+
 private:
 	string name;
 	unsigned int hp;
