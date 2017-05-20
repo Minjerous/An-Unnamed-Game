@@ -8,6 +8,91 @@ int HP = 100, GongJi = 20, FangYu = 20;
 int Level = 1, Exp = 0; int MaxExp;
 int Money = 0;
 
+void bag();
+void map();
+void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_); 
+void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_);
+void Version(float version);
+void CheckName();
+
+class Guanqia
+{
+	private:
+		int number;
+		string name;
+		bool zhanling;
+		bool kaiqi; 
+	public:
+		void init(int _number,string _name)
+		{
+			name = _name;
+			number = _number;
+			zhanling = false;
+			kaiqi = false;
+		}
+		void get()
+		{
+			cout<<number<<")\t"<<name<<"\t";
+			if(kaiqi == true)
+			{
+				if(zhanling == true)
+				{
+					cout<<"已占领\n";	
+				}
+				else
+				{
+					cout<<"已开启\n";
+				}
+			}
+			else
+			{
+				cout<<"未开启\n";
+			}
+		}
+		void set(int _zhanling,int _kaiqi)
+		{
+			zhanling = _zhanling;
+			kaiqi = _kaiqi;
+		}
+};
+Guanqia a_a;Guanqia a_b;Guanqia a_c;Guanqia a_d;Guanqia a_e;Guanqia a_f;Guanqia a_g;Guanqia a_h;Guanqia a_i;Guanqia a_j;
+int main()
+{
+	Version(1.08f);
+	CheckName();
+	zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);
+	a_a.init(1,"大操场  ") ;a_a.set(0,1);
+	a_b.init(2,"大门    ") ;
+	a_c.init(3,"男生宿舍") ;
+	a_d.init(4,"实验楼  ") ;
+	a_e.init(5,"办公楼  ") ;
+	a_f.init(6,"艺术楼  ") ;
+	a_g.init(7,"小操场  ") ;
+	a_h.init(8,"教学楼  ") ;
+	a_i.init(9,"食堂    ") ;
+	a_j.init(10,"女生宿舍") ;
+	system("pause"); 
+
+	while (1 == 1)
+	{
+		cout << "请选择你要做什么：\n";
+		cout << "1)背包(开发中)\n2)地图\n3)状态\n";
+		cin >> anjian;
+		cout << "\n\n\n\n\n\n\n\n\n\n";
+		switch (anjian)
+		{
+			case 1:bag(); break;
+			case 2:map(); break;
+			case 3:zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);  break;
+			default:cout << "输入错误\n\n";
+		}
+	}
+	return 0;
+}
+
+
+
+
 void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 {
 	int ZhanDouLi = GongJi * 2 + FangYu * 2 + HP;
@@ -20,6 +105,10 @@ void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 	cout << "你的经验值为" << Exp << "/" << MaxExp << "；\n";
 	cout << "你的钢镚子为" << Money << "角；\n";
 	cout << endl; 
+}
+void Version(float version)
+{
+	cout << "版本：" << version << endl;
 }
 void bag()
 {
@@ -85,8 +174,65 @@ void map()
 																{
 																	while (1 == 1)
 																	{
-																		int zero = 0;
-																		cout << 0 / zero;
+																		a_a.get();
+																		a_b.get();
+																		a_c.get();
+																		a_d.get();
+																		a_e.get();
+																		a_f.get();
+																		a_g.get();
+																		a_h.get();
+																		a_i.get();
+																		a_j.get();
+																		cout<<"11)\t返回\n";	
+																		cin >> anjian;
+																		cout << "\n\n\n\n\n\n\n\n\n\n";
+																		if (anjian == 1)
+																		{
+																			cout<<"操场上什么都没有，你不会吹灰之力就占领了他\n";
+																			a_a.set(1,1);
+																			a_b.set(0,1);
+																		}
+																		else if (anjian == 2)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 3)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 4)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 5)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 6)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 7)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 8)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 9)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else if (anjian == 10)
+																		{
+																			cout << "该关卡未开启\n";
+																		}
+																		else
+																		{
+																			break;
+																		}	
 																	}
 																}
 																else if (anjian == 2)
@@ -171,7 +317,7 @@ void map()
 	}
 
 	
-}
+} 
 void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_)
 {
 	int MaxExp_ = 10 * Level_;
@@ -195,10 +341,6 @@ void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_)
 	FangYu = FangYu_;
 	HP = HP_;
 
-}
-void Version(float version)
-{
-	cout << "版本：" << version << endl;
 }
 void CheckName()
 {
@@ -232,38 +374,4 @@ void CheckName()
 	{
 		cout << "你好，" << Name << "，欢迎进入这个逗比的游戏。" << endl << endl;
 	}
-}
-void DaiDing()
-{
-	while (1==1)
-	{
-		cout << "请选择你要做什么：\n";
-		cout << "1)背包(开发中)\n2)地图\n3)状态\n";
-		cin >> anjian;
-		cout << "\n\n\n\n\n\n\n\n\n\n";
-		switch (anjian)
-		{
-		case 1:bag(); break;
-		case 2:map(); break;
-		case 3:zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);  break;
-		default:cout << "输入错误\n\n";
-		}
-	}
-}
-
-int main()
-{
-	Version(1.07f);
-	CheckName();
-	zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);
-	system("pause"); 
-
-	while (1 == 1)
-	{
-		DaiDing();
-	}
-
-
-	
-	return 0;
 }
