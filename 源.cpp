@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 
-string Name; 
+string Name; int a;
 int HP = 100, GongJi = 20, FangYu = 20;
-int Level = 1, Exp = 0, MaxExp;
+int Level = 1, Exp = 0;
 int Money = 0;
-
-void XianShi(int GongJi, int FangYu, int HP,int Money,int Level,int Exp)
+int MaxExp;
+void XianShi(int , int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 {
 	int ZhanDouLi = GongJi * 2 + FangYu * 2 + HP;
 	int MaxExp = Level * 10;
@@ -17,6 +17,31 @@ void XianShi(int GongJi, int FangYu, int HP,int Money,int Level,int Exp)
 	cout << "你的防御力为" << FangYu << "；\n";
 	cout << "你的等级为" << Level << "级；\n";
 	cout << "你的经验值为" << Exp << "/" << MaxExp << "；\n";
+	cout << "你的铜币为" << Money << "；\n";
+}
+void Change(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_)
+{
+	int MaxExp_ = 10 * Level_;
+	while(Exp_ >= MaxExp_)
+	{
+		Level_++;
+		Exp_ =Exp_- MaxExp_;
+		MaxExp_ = 10 * Level_;
+		GongJi_ += 4;
+		FangYu_ += 2;
+		HP_ += 20;
+	}
+	if (Level_ > Level)
+	{
+		cout << "恭喜你升级了，同时获得了"<<(Level_-Level)*100<<"铜币\n";
+		Money += (Level_ - Level) * 100;
+	}
+	Level = Level_;
+	Exp = Exp_;
+	GongJi = GongJi_;
+	FangYu = FangYu_;
+	HP = HP_;
+
 }
 void Version(float version)
 {
@@ -50,15 +75,12 @@ void CheckName()
 
 int main()
 {
-	Version(1.04f);
-
+	Version(1.05f);
 	CheckName();
-	
-	
 	XianShi(GongJi, FangYu, HP, Money, Level, Exp);
+
 	system("pause");
-	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
-	cout << "错误：0x80072ee2		您的计算机配置不足以运行该游戏，请更换硬件或计算机.";
-	system("pause");
+	int zero = 0;
+	cout << 0 / zero;
 	return 0;
 }
