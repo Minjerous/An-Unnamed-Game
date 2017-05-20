@@ -2,14 +2,7 @@
 #include <iostream>
 #include "Skill.h"
 using namespace std;
-Skill::Skill(string _name, int _hurt,int _mp)
-{
-	name = _name;
-	hurt = _hurt;
-	mp = _mp;
-
-	level = 0;
-}
+Skill::Skill(string _name, int _hurt, int _mp,int _level) :name(_name), hurt(_hurt), mp(_mp), level(_level){}
 string Skill::getName()
 {
 	return name;

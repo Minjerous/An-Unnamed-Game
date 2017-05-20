@@ -4,7 +4,7 @@ using namespace std;
 class Object_dj
 {
 public:
-	Object_dj(string _name, string _explain, int _price, int _id);
+	Object_dj(string _name, string _explain, int _price, int _id,int _number = 0,int _order = 0);
 	int getID();
 	int getNumber();
 	int getOrder();

@@ -1,15 +1,7 @@
 ﻿#include <string>
 #include "Object_dj.h"
-Object_dj::Object_dj(string _name, string _explain, int _price,int _id)
-{
-	name = _name;
-	explain = _explain;
-	id = _id;
-	number = 0;
-	order = 0;
-	price = _price;
 
-}
+Object_dj::Object_dj(string _name, string _explain, int _price, int _id, int _number, int _order) :name(_name), explain(_explain), price(_price), id(_id),number(_number),order(_order){}
 
 int Object_dj::getID()
 {

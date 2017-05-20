@@ -1,14 +1,8 @@
 ﻿#include <string>
 #include "Boss.h"
-Boss::Boss(string _name, unsigned int _hp, unsigned int _gongji, unsigned int _fangyu, unsigned  int _exp, unsigned int _money)
-{
-	name = _name;
-	hp = _hp;
-	gongji = _gongji;
-	fangyu = _fangyu;
-	exp = _exp;
-	money = _money;
-}
+
+Boss::Boss(string _name, unsigned int _hp, unsigned int _gongji, unsigned int _fangyu, unsigned  int _exp, unsigned int _money):name(_name), hp(_hp), gongji(_gongji), fangyu(_fangyu), exp(_exp), money(_money){}
+
 int Boss::getHp()
 {
 	return hp;

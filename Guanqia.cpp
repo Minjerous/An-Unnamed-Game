@@ -1,16 +1,12 @@
 ﻿#include <iostream>
 #include "Guanqia.h"
 using namespace std;
+
+Guanqia::Guanqia(int _number, string _name, int _kaiqi,int _zhanling) :number(_number), name(_name), kaiqi(_kaiqi), zhanling(_zhanling){}
+
 int Guanqia::getKaiqi()
 {
 		return kaiqi;
-}
-Guanqia::Guanqia(int _number, string _name)
-{
-		name = _name;
-		number = _number;
-		zhanling = false;
-		kaiqi = false;
 }
 void Guanqia::get()
 {

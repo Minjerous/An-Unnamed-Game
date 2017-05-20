@@ -3,7 +3,7 @@ using namespace std;
 class Skill
 {
 public:
-	Skill(string _name, int _hurt, int _mp);
+	Skill(string _name, int _hurt, int _mp,int _level = 0);
 	string getName();
 	int getHurt();
 	int getMp();
