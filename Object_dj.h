@@ -22,8 +22,8 @@ private:
 	string name;
 	string explain;
 	int id;
-	int number;//数量
-	int order;//顺序
 	int price;
+	int number;//数量
+	const int order;//顺序
 
 };

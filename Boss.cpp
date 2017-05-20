@@ -1,7 +1,9 @@
 ﻿#include <string>
 #include "Boss.h"
 
-Boss::Boss(string _name, unsigned int _hp, unsigned int _gongji, unsigned int _fangyu, unsigned  int _exp, unsigned int _money):name(_name), hp(_hp), gongji(_gongji), fangyu(_fangyu), exp(_exp), money(_money){}
+Boss::Boss(string _name, unsigned int _hp, unsigned int _gongji, unsigned int _fangyu, unsigned  int _exp, unsigned int _money, string skill1_name, int skill1_hurt, int skill1_type, string skill2_name, int skill2_hurt, int skill2_type, string skill3_name, int skill3_hurt, int skill3_type, string skill4_name, int skill4_hurt, int skill4_type) :name(_name), hp(_hp), gongji(_gongji), fangyu(_fangyu), exp(_exp), money(_money), skill1(skill1_name, skill1_hurt, skill1_type), skill2(skill2_name, skill2_hurt, skill2_type), skill3(skill3_name, skill3_hurt, skill3_type), skill4(skill4_name, skill4_hurt, skill4_type)
+{
+}
 
 unsigned int Boss::getHp()
 {
@@ -26,29 +28,4 @@ unsigned int Boss::getExp()
 unsigned int Boss::getMoney()
 {
 	return money;
-}
-
-void Boss::setSkill1(string name1, unsigned  int hurt1, int type1)
-{
-	skill1_name = name1;
-	skill1_hurt = hurt1;
-	skill1_type = type1;
-}
-void Boss::setSkill2(string name2, unsigned int hurt2, int type2)
-{
-	skill2_name = name2;
-	skill2_hurt = hurt2;
-	skill2_type = type2;
-}
-void Boss::setSkill3(string name3, unsigned int hurt3, int type3)
-{
-	skill3_name = name3;
-	skill3_hurt = hurt3;
-	skill3_type = type3;
-}
-void Boss::setSkill4(string name4, unsigned int hurt4, int type4)
-{
-	skill4_name = name4;
-	skill4_hurt = hurt4;
-	skill4_type = type4;
 }

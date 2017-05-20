@@ -36,10 +36,6 @@ void Object_dj::setNumber(int _number)
 {
 	number = _number;
 }
-void Object_dj::setOrder(int _order)
-{
-	order = _order;
-}
 void Object_dj::setPrice(int _price)
 {
 	price = _price;
