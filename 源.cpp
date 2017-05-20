@@ -150,37 +150,21 @@ void Role_CheckName()
 	cout << "请输入你的名字:\n";
 	cin >> Name;
 	if (Name == "肖海洋" || Name == "海洋" || Name == "xiaohaiyang" || Name == "XIAOHAIYANG" || Name == "haiyang" || Name == "HAIYANG" || Name == "海洛之神")
-	{
 		cout << "海洋，看见我地理课本了吗？\n\n";
-	}
 	else if (Name == "肖培成" || Name == "培成" || Name == "xiaopeicheng" || Name == "XIAOPEICHENG" || Name == "peicheng" || Name == "PEICHENG")
-	{
 		cout << "培成，实行计划！\n\n";
-	}
 	else if (Name == "马超" || Name == "machao" || Name == "MACHAO" || Name == "修罗马超")
-	{
 		cout << "马超，别忘了在211区玩呀！\n\n";
-	}
 	else if (Name == "巩新余" || Name == "新余" || Name == "gongxinyu" || Name == "GONGXINYU" || Name == "xinyu" || Name == "XINYU" || Name == "草帽路飞")
-	{
 		cout << "新余，你的许愿树成长度又满了....\n\n";
-	}
 	else if (Name == "刘希涛" || Name == "希涛" || Name == "liuxitao" || Name == "LIUXITAO" || Name == "xitao" || Name == "XITAO")
-	{
 		cout << "希涛，别忘了欠我三包馍馍干\n\n";
-	}
 	else if (Name == "孔龙" || Name == "恐龙" || Name == " konglong" || Name == "KONGLONG")
-	{
 		cout << "这是一个彩蛋，不是恐龙蛋。。。\n\n";
-	}
 	else if (Name == "齐伟" || Name == "qiwei" || Name == " QIWEI" || Name == "QiWei" || Name == "Qi Wei" || Name == "qi wei" || Name == "QI WEI")
-	{
-		cout << "君所欲之网已毕，址者，http://211tzbd.tk/qiwei.html 也。\n\n";
-	}
+		cout << "君所欲之网已毕，址者，http://www.211tzbd.tk/qiwei.html 也。\n\n";
 	else
-	{
-		cout << "你好，" << Name << "，欢迎进入这个逗比的游戏。" << endl << endl;
-	}
+		cout << "信息：你好，" << Name << "，欢迎进入这个逗比的游戏。\n" << endl;
 }
 void Role_LevelUp(int _exp)
 {
@@ -198,7 +182,7 @@ void Role_LevelUp(int _exp)
 		Mp += 15;
 
 
-		cout << "恭喜你升到了" << Level << "级了，战斗力提升" << endl;
+		cout << "信息：恭喜你升到了" << Level << "级了，战斗力提升" << endl;
 	}
 }
 
@@ -330,19 +314,12 @@ void Bag_Show()
 			else if (anjian == 9)
 				Bag_Show_dj(&bag_9);
 			else if (anjian == 11)
-			{
 				type = true;
-			}
 			else if (anjian == 12)
-			{
 				type = false;
-			}
 			else if (anjian == 0)
-			{
 				break;
-			}
 		}
-
 	}
 }
 void Bag_Get_dj(const Object_dj *dj)
@@ -441,7 +418,7 @@ void Bag_Get_dj(const Object_dj *dj)
 		bag_9.setNumber(1);
 	}
 	else
-		cout << "背包已满！";
+		cout << "信息：背包已满！";
 }
 void Bag_Show_dj(Object_dj *dj)
 {
@@ -503,9 +480,7 @@ void Bag_Show_dj(Object_dj *dj)
 				}
 			}
 			else if (anjian == 3)
-			{
 				break;
-			}
 		}
 	}
 	else
@@ -520,7 +495,7 @@ void Map_Show()
 {
 	while (1 == 1)
 	{
-		cout << "1)银河系 2）河外星系(未开启) 3)返回\n";
+		cout << "1)银河系 2）河外星系 3)返回\n";
 		cin >> anjian;
 		system("cls");
 		if (anjian == 1)									//银河系
@@ -684,9 +659,7 @@ void Map_Show()
 																			system("cls");
 																		}
 																		else
-																		{
 																			break;
-																		}
 																	}
 																}
 																else if (anjian == 2)
@@ -696,9 +669,7 @@ void Map_Show()
 																	system("cls");
 																}
 																else
-																{
 																	break;
-																}
 															}
 														}
 														else if (anjian == 2)
@@ -708,9 +679,7 @@ void Map_Show()
 															system("cls");
 														}
 														else
-														{
 															break;
-														}
 													}
 												}
 												else if (anjian == 2)
@@ -720,9 +689,7 @@ void Map_Show()
 													system("cls");
 												}
 												else
-												{
 													break;
-												}
 											}
 										}
 										else if (anjian == 2)
@@ -732,9 +699,7 @@ void Map_Show()
 											system("cls");
 										}
 										else
-										{
 											break;
-										}
 									}
 								}
 								else if (anjian == 2)
@@ -744,10 +709,7 @@ void Map_Show()
 									system("cls");
 								}
 								else
-								{
 									break;
-								}
-
 							}
 						}
 						else if (anjian == 2)
@@ -757,9 +719,7 @@ void Map_Show()
 							system("cls");
 						}
 						else
-						{
 							break;
-						}
 					}
 				}
 				else if (anjian == 2)
@@ -769,19 +729,17 @@ void Map_Show()
 					system("cls");
 				}
 				else
-				{
 					break;
-				}
 			}
 		}
 		else if (anjian == 2)								//河外星系
 		{
 			cout << "信息：该关卡未开启\n";
+			system("pause");
+			system("cls");
 		}
 		else												//返回
-		{
 			break;
-		}
 	}
 
 
@@ -842,9 +800,7 @@ void Skill_Study_output(int _number,Skill _skill)
 {
 	cout << _number<<")" << _skill.getName() << "\t"; 
 	if (_skill.getLevel() > 0)
-	{
 		cout <<"Lv:"<< _skill.getLevel();
-	}
 	cout << endl;
 }
 void Skill_Study()
@@ -855,8 +811,6 @@ void Skill_Study()
 	system("cls");
 	if (anjian == 1)
 		Skill_Study_skill(zhuangji);
-		
-
 }
 void Skill_Study_skill(Skill _skill)
 {
@@ -940,7 +894,7 @@ void System_Save_Show()
 void System_About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.25" << endl;
+	cout << "版本：1.26" << endl;
 	cout << "官网：http://www.211tzbd.tk" << endl;
 	system("pause");
 	system("cls");
@@ -970,49 +924,27 @@ void Fighting(Boss boss)
 		cout << Name << "的生命为：\n";
 		cout << " ——————————" << endl;
 		if (fight_role_hp / Hp == 1)
-		{
 			cout << "|▉▉▉▉▉▉▉▉▉▉|";
-		}
 		else if (fight_role_hp * 10 / Hp >= 9)
-		{
 			cout << "|▉▉▉▉▉▉▉▉▉  |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 8)
-		{
 			cout << "|▉▉▉▉▉▉▉▉    |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 7)
-		{
 			cout << "|▉▉▉▉▉▉▉      |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 6)
-		{
 			cout << "|▉▉▉▉▉▉        |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 5)
-		{
 			cout << "|▉▉▉▉▉          |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 4)
-		{
 			cout << "|▉▉▉▉            |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 3)
-		{
 			cout << "|▉▉▉              |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 0.2)
-		{
 			cout << "|▉▉                |";
-		}
 		else if (fight_role_hp * 10 / Hp >= 0.1)
-		{
 			cout << "|▉                  |";
-		}
 		else if (fight_role_hp / Hp <= 0)
-		{
 			cout << "|                    |";
-		}
 		cout << "\t" << fight_role_hp << "/" << Hp << endl;
 		cout << " ——————————" << endl;
 		cout << "\t" << "护盾：" << fight_role_shield << endl << endl;
@@ -1020,49 +952,27 @@ void Fighting(Boss boss)
 		cout << boss.getName() << "的生命为：\n";
 		cout << " ——————————" << endl;
 		if (fight_boss_hp / boss.getHp() == 1)
-		{
 			cout << "|▉▉▉▉▉▉▉▉▉▉|";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 9)
-		{
 			cout << "|▉▉▉▉▉▉▉▉▉  |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 8)
-		{
 			cout << "|▉▉▉▉▉▉▉▉    |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 7)
-		{
 			cout << "|▉▉▉▉▉▉▉      |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 6)
-		{
 			cout << "|▉▉▉▉▉▉        |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 5)
-		{
 			cout << "|▉▉▉▉▉          |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 4)
-		{
 			cout << "|▉▉▉▉            |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 3)
-		{
 			cout << "|▉▉▉              |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 2)
-		{
 			cout << "|▉▉                |";
-		}
 		else if (fight_boss_hp * 10 / boss.getHp() >= 1)
-		{
 			cout << "|▉                  |";
-		}
 		else if (fight_boss_hp / boss.getHp() == 0)
-		{
 			cout << "|                    |";
-		}
 		cout << "\t" << fight_boss_hp << "/" << boss.getHp() << endl;
 		cout << " ——————————" << endl;
 		cout << "\t" << "护盾：" << fight_boss_shield << endl << endl;
@@ -1078,7 +988,7 @@ void Fighting(Boss boss)
 		{
 			cout << "信息：你胜利了,获得了" << boss.getExp() << "点经验，而且还捡到了他掉落的" << boss.getMoney() << "毛钱" << endl;
 			Role_LevelUp(boss.getExp());
-			Money += 5;
+			Money += boss.getMoney();
 
 			system("pause");
 			system("cls");
@@ -1099,31 +1009,31 @@ void Fighting(Boss boss)
 				if (skill_1.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_1);
 				else
-					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
+					cout << "状态：\n该技能位为空，I am very happy that you wasted an opportunity.\n" << endl;
 			}
 			else if (anjian == 2)
 			{
 				if (skill_2.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_2);
 				else
-					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
+					cout << "状态：\n该技能位为空，I am very happy that you wasted an opportunity.\n" << endl;
 			}
 			else if (anjian == 3)
 			{
 				if (skill_3.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_3);
 				else
-					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
+					cout << "状态：\n该技能位为空，I am very happy that you wasted an opportunity.\n" << endl;
 			}
 			else if (anjian == 4)
 			{
 				if (skill_4.getType() == 1)
 					FIghting_role_type1(&fight_boss_hp, &fight_boss_shield, &fight_role_mp, boss, skill_4);
 				else
-					cout << "状态：该技能位为空，I am very happy that you wasted an opportunity." << endl;
+					cout << "状态：\n该技能位为空，I am very happy that you wasted an opportunity.\n" << endl;
 			}
 			else
-				cout << "状态：没有该技能位，I am very happy that you wasted an opportunity." << endl;
+				cout << "状态：\n没有该技能位，I am very happy that you wasted an opportunity.\n" << endl;
 		}
 		else//Boss战斗
 		{
@@ -1137,18 +1047,18 @@ void Fighting(Boss boss)
 				if (boss.skill1.getType() == 1)
 				{
 					fight_role_hp = fight_role_hp - (boss.skill1.getHurt() * boss.getGongji() / 100 - FangYu);
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill1.getName() << ",对你造成了" << boss.skill1.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill1.getName() << ",对你造成了" << boss.skill1.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害\n" << endl;
 				}
 				if (boss.skill1.getType() == 2)
 				{
 					fight_boss_shield += boss.skill1.getHurt() * boss.getGongji() / 100;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill1.getName() << ",为自己增加了" << boss.skill1.getHurt() * boss.getGongji() / 100 << "点护盾" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill1.getName() << ",为自己增加了" << boss.skill1.getHurt() * boss.getGongji() / 100 << "点护盾\n" << endl;
 				}
 				else
 				{
 					fight_boss_hp += boss.skill1.getHurt() * boss.getGongji() / 100;
 					fight_boss_hp = (fight_boss_hp > boss.getHp()) ? boss.getHp() : fight_boss_hp;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill1.getName() << ",为自己增加了" << boss.skill1.getHurt() * boss.getGongji() / 100 << "点生命" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill1.getName() << ",为自己增加了" << boss.skill1.getHurt() * boss.getGongji() / 100 << "点生命\n" << endl;
 				}
 			}
 			else if (may < 75 && may >= 50)
@@ -1156,18 +1066,18 @@ void Fighting(Boss boss)
 				if (boss.skill2.getType() == 1)
 				{
 					fight_role_hp = fight_role_hp - (boss.skill2.getHurt() * boss.getGongji() / 100 - FangYu);
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill2.getName() << ",对你造成了" << boss.skill2.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill2.getName() << ",对你造成了" << boss.skill2.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害\n" << endl;
 				}
 				if (boss.skill2.getType() == 2)
 				{
 					fight_boss_shield += boss.skill2.getHurt() * boss.getGongji() / 100;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill2.getName() << ",为自己增加了" << boss.skill2.getHurt() * boss.getGongji() / 100 << "点护盾" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill2.getName() << ",为自己增加了" << boss.skill2.getHurt() * boss.getGongji() / 100 << "点护盾\n" << endl;
 				}
 				else
 				{
 					fight_boss_hp += boss.skill2.getHurt() * boss.getGongji() / 100;
 					fight_boss_hp = (fight_boss_hp > boss.getHp()) ? boss.getHp() : fight_boss_hp;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill2.getName() << ",为自己增加了" << boss.skill2.getHurt() * boss.getGongji() / 100 << "点生命" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill2.getName() << ",为自己增加了" << boss.skill2.getHurt() * boss.getGongji() / 100 << "点生命\n" << endl;
 				}
 			}
 			else if (may < 50 && may >= 25)
@@ -1175,18 +1085,18 @@ void Fighting(Boss boss)
 				if (boss.skill3.getType() == 1)
 				{
 					fight_role_hp = fight_role_hp - (boss.skill3.getHurt() * boss.getGongji() / 100 - FangYu);
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill3.getName() << ",对你造成了" << boss.skill3.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill3.getName() << ",对你造成了" << boss.skill3.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害\n" << endl;
 				}
 				if (boss.skill3.getType() == 2)
 				{
 					fight_boss_shield += boss.skill3.getHurt() * boss.getGongji() / 100;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill3.getName() << ",为自己增加了" << boss.skill3.getHurt() * boss.getGongji() / 100 << "点护盾" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill3.getName() << ",为自己增加了" << boss.skill3.getHurt() * boss.getGongji() / 100 << "点护盾\n" << endl;
 				}
 				else
 				{
 					fight_boss_hp += boss.skill3.getHurt() * boss.getGongji() / 100;
 					fight_boss_hp = (fight_boss_hp > boss.getHp()) ? boss.getHp() : fight_boss_hp;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill3.getName() << ",为自己增加了" << boss.skill3.getHurt() * boss.getGongji() / 100 << "点生命" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill3.getName() << ",为自己增加了" << boss.skill3.getHurt() * boss.getGongji() / 100 << "点生命\n" << endl;
 				}
 			}
 			else if (may < 25 && may >= 0)
@@ -1194,18 +1104,18 @@ void Fighting(Boss boss)
 				if (boss.skill4.getType() == 1)
 				{
 					fight_role_hp = fight_role_hp - (boss.skill4.getHurt() * boss.getGongji() / 100 - FangYu);
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill4.getName() << ",对你造成了" << boss.skill4.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill4.getName() << ",对你造成了" << boss.skill4.getHurt() * boss.getGongji() / 100 - FangYu << "点伤害\n" << endl;
 				}
 				if (boss.skill4.getType() == 2)
 				{
 					fight_boss_shield += boss.skill4.getHurt() * boss.getGongji() / 100;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill4.getName() << ",为自己增加了" << boss.skill4.getHurt() * boss.getGongji() / 100 << "点护盾" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill4.getName() << ",为自己增加了" << boss.skill4.getHurt() * boss.getGongji() / 100 << "点护盾\n" << endl;
 				}
 				else
 				{
 					fight_boss_hp += boss.skill4.getHurt() * boss.getGongji() / 100;
 					fight_boss_hp = (fight_boss_hp > boss.getHp()) ? boss.getHp() : fight_boss_hp;
-					cout << "状态：" << boss.getName() << "使用了" << boss.skill4.getName() << ",为自己增加了" << boss.skill4.getHurt() * boss.getGongji() / 100 << "点生命" << endl;
+					cout << "状态：\n" << boss.getName() << "使用了" << boss.skill4.getName() << ",为自己增加了" << boss.skill4.getHurt() * boss.getGongji() / 100 << "点生命\n" << endl;
 				}
 			}
 		}
@@ -1222,14 +1132,14 @@ void FIghting_role_type1(unsigned int *boss_hp, unsigned int *boss_shield, unsig
 				if ((skill.getHurt() * GongJi / 50 - boss.getFangyu() < *boss_shield))//如果伤害小于护盾
 				{
 					*boss_shield -= skill.getHurt() * GongJi / 50 - boss.getFangyu();
-					cout << "状态：你使用了" << "普通攻击" << "触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了0点伤害" << endl;
+					cout << "状态：\n你使用了" << "普通攻击" << "触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
+					cout << "由于对方拥有护盾，你实际造成了0点伤害\n" << endl;
 				}
 				else//如果伤害大于护盾
 				{
 					*boss_hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *boss_shield) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *boss_shield);
-					cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 50 - boss.getFangyu()) - *boss_shield << "点伤害" << endl;
+					cout << "状态：\n你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
+					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 50 - boss.getFangyu()) - *boss_shield << "点伤害\n" << endl;
 					*boss_shield = 0;
 				}
 			}
@@ -1238,14 +1148,14 @@ void FIghting_role_type1(unsigned int *boss_hp, unsigned int *boss_shield, unsig
 				if ((skill.getHurt() * GongJi / 100 - boss.getFangyu() < *boss_shield))//如果伤害小于护盾
 				{
 					*boss_shield -= skill.getHurt() * GongJi / 100 - boss.getFangyu();
-					cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了0点伤害" << endl;
+					cout << "状态：\n你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
+					cout << "由于对方拥有护盾，你实际造成了0点伤害\n" << endl;
 				}
 				else//如果伤害大于护盾
 				{
 					*boss_hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *boss_shield) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *boss_shield);
-					cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 100 - boss.getFangyu()) - *boss_shield << "点伤害" << endl;
+					cout << "状态：\n你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
+					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 100 - boss.getFangyu()) - *boss_shield << "点伤害\n" << endl;
 					*boss_shield = 0;
 				}
 			}
@@ -1255,17 +1165,17 @@ void FIghting_role_type1(unsigned int *boss_hp, unsigned int *boss_shield, unsig
 			if (rand() % 100 < BaoJi)//如果暴击
 			{
 				*boss_hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu()) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu());
-				cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 << "点伤害," << endl;
+				cout << "状态：\n你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 << "点伤害\n" << endl;
 			}
 			else//如果没暴击
 			{
 				*boss_hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu()) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu());
-				cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害," << endl;
+				cout << "状态：\n你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害\n" << endl;
 			}
 		}
 	}
 	else
-		cout << "你的MP不足以释放此技能";
+		cout << "状态：\n你的MP不足以释放此技能\n" << endl;
 }
 void Fighting_role_type2(unsigned int *shield, Skill skill)
 {
