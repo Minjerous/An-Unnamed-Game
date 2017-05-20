@@ -28,48 +28,64 @@ Guanqia a_j(10, "女生宿舍");
 
 Boss kanmendashu ( "看门大叔", 100, 10, 0 ,5);
 
+void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_); 
 void Bag();
 void Map();
+void Save();
 void About();
 void Fighting(Boss boss);
-void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_);
-//void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_);
+
 void LevelUp(int _exp);
 void CheckName();
 
 
 int main()
 {
+	//开始定义Boss技能	1:攻击 2:护盾 3:加血
 	kanmendashu.setSkill1("呼叫120", 50,3);
 	kanmendashu.setSkill2("关门", 60,2);
 	kanmendashu.setSkill3("呼叫120", 50, 3);
 	kanmendashu.setSkill4("关门", 60, 2);
-	/*
-	类型：
-	1：攻击
-	2：护盾
-	3：加血
-	*/
+	//开启第一关
 	a_a.set(0, 1);
+
+	while (true)
+	{
+		cout << "1)新的开始  2)读取存档（未开启）" << endl;
+		cin >> anjian;
+		system("cls");
+		if (anjian == 1)
+		{
+			break;
+		}
+		else
+		{
+			cout << "该功能未开启"<<endl;
+			system("pause");
+			system("cls");
+		}
+	}
+
 	CheckName();
 	system("pause");
 	system("cls");
-	cout << "你现在的属性为：\n";
+	cout << "你现在的状态为：\n";
 	Role(GongJi, FangYu, Hp, Money, Level, Exp);
 	
 
 	while (true)
 	{
 		cout << "请选择你要做什么：\n";
-		cout << "1)背包\n2)地图\n3)角色\n4)关于\n";
+		cout << "1)角色\n2)背包\n3)地图\n4)保存\n5)关于\n";
 		cin >> anjian;
 		system("cls");
 		switch (anjian)
 		{
-		case 1:Bag(); break;
-		case 2:Map(); break;
-		case 3:Role(GongJi, FangYu, Hp, Money, Level, Exp);  break;
-		case 4:About(); break;
+		case 1:Role(GongJi, FangYu, Hp, Money, Level, Exp);  break; 
+		case 2:Bag(); break;
+		case 3:Map(); break;
+		case 4:Save(); break;
+		case 5:About(); break;
 		default:cout << "输入错误\n\n";
 		}
 	}
@@ -77,6 +93,21 @@ int main()
 }
 
 
+void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_)
+{
+	cout << "昵称：" << Name << "；\n\n";
+	int ZhanDouLi = GongJi * 2 + FangYu * 2 + Hp;
+	cout << "战斗力:" << ZhanDouLi << "；\n\n";
+	cout << "生命值:" << Hp << "；\n\n";
+	cout << "攻击力:" << GongJi << "；\n";
+	cout << "防御力:" << FangYu << "；\n\n";
+	cout << "等级:" << Level << "级；\n";
+	cout << "经验值:" << Exp << "/" << MaxExp << "；\n\n";
+	cout << "钢镚子:" << Money << "角；\n";
+	cout << endl;
+	system("pause");
+	system("cls");
+}
 void Fighting(Boss boss)
 {
 	int fight_role_hp = Hp;
@@ -327,21 +358,7 @@ void Fighting(Boss boss)
 void About()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.12" << endl;
-	system("pause");
-	system("cls");
-}
-void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_)
-{
-	int ZhanDouLi = GongJi * 2 + FangYu * 2 + Hp;
-	cout << "战斗力:" << ZhanDouLi << "；\n\n";
-	cout << "生命值:" << Hp << "；\n\n";
-	cout << "攻击力:" << GongJi << "；\n";
-	cout << "防御力:" << FangYu << "；\n\n";
-	cout << "等级:" << Level << "级；\n";
-	cout << "经验值:" << Exp << "/" << MaxExp << "；\n\n";
-	cout << "钢镚子:" << Money << "角；\n";
-	cout << endl;
+	cout << "版本：1.13" << endl;
 	system("pause");
 	system("cls");
 }
@@ -423,6 +440,13 @@ void Bag()
 		}
 
 	}
+}
+void Save()
+{
+	cout << "保存：" << endl;
+	cout << "该功能未开启" << endl;
+	system("pause");
+	system("cls");
 }
 void Map()
 {
@@ -691,30 +715,6 @@ void Map()
 
 
 }
-/*void LevelUp(int GongJi_, int FangYu_, int Hp_, int Level_, int Exp_)
-{
-	int MaxExp_ = 10 * Level_;
-	while (Exp_ >= MaxExp_)
-	{
-		Level_++;
-		Exp_ = Exp_ - MaxExp_;
-		MaxExp_ = 10 * Level_;
-		GongJi_ += 4;
-		FangYu_ += 2;
-		Hp_ += 20;
-	}
-	if (Level_ > Level)
-	{
-		cout << "恭喜你升级了，同时获得了" << (Level_ - Level) * 100 << "铜币\n";
-		Money += (Level_ - Level) * 100;
-	}
-	Level = Level_;
-	Exp = Exp_;
-	GongJi = GongJi_;
-	FangYu = FangYu_;
-	Hp = Hp_;
-
-}*/
 void LevelUp(int _exp)
 {
 	Exp += _exp;
