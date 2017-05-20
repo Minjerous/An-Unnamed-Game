@@ -9,11 +9,11 @@ public:
 	Skill(string _name = "", int _hurt = 0, int _type = 0, int _mp = 0, int _levelupmoney = 0, int _level = 0);
 	~Skill();
 	string getName() const;
-	int getHurt() const;
-	int getType() const;
-	int getMp() const;
-	int getLevel() const;
-	int getLevelupmoney() const;
+	unsigned int getHurt() const;
+	unsigned int getType() const;
+	unsigned int getMp() const;
+	unsigned int getLevel() const;
+	unsigned int getLevelupmoney() const;
 
 	void setName(string _name);
 	void setHurt(int _hurt);
@@ -25,10 +25,10 @@ public:
 	
 private:
 	string name;
-	int hurt;
-	int type;
-	int mp;
-	int level;
-	int levelupmoney;
+	unsigned int hurt;
+	unsigned int type;
+	unsigned int mp;
+	unsigned int level;
+	unsigned int levelupmoney;
 };
 #endif

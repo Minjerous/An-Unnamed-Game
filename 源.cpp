@@ -54,7 +54,7 @@ void Role_CheckName();
 void Role_LevelUp(int _exp);
 void Bag_Show();
 void Bag_Show_dj(Object_dj *dj);
-void Bag_Get_dj(Object_dj *dj);
+void Bag_Get_dj(const Object_dj *dj);
 void Bag_Get_zb();
 void Skill_Show();
 void Skill_Showskill(Skill _skill);
@@ -81,7 +81,7 @@ void Fighting_boss_type3();
 int main()
 {
 	//初始化随机数种子
-	srand(time(0));
+	srand((unsigned int)time(NULL));
 	//初始化技能
 	skill_1 = putonggongji;
 
@@ -96,7 +96,7 @@ int main()
 		}
 		else
 		{
-			cout << "该功能未开启"<<endl;
+			cout << "信息：该功能未开启"<<endl;
 			system("pause");
 			system("cls");
 		}
@@ -105,7 +105,7 @@ int main()
 	Role_CheckName();
 	system("pause");
 	system("cls");
-	cout << "你现在的状态为：\n";
+	cout << "信息：你现在的状态为：\n";
 	Role_Show(GongJi, FangYu, Hp, Money, Level, Exp);
 	
 
@@ -227,55 +227,55 @@ void Bag_Show()
 
 			if (anjian == 1)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 2)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 3)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 4)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 5)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 6)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 7)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 8)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
 			else if (anjian == 9)
 			{
-				cout << "该处没有物品" << endl;
+				cout << "信息：该处没有物品" << endl;
 				system("pause");
 				system("cls");
 			}
@@ -458,7 +458,7 @@ void Bag_Show_dj(Object_dj *dj)
 			system("cls");
 			if (anjian == 1)
 			{
-				cout << "该物品不能使用" << endl;
+				cout << "信息：该物品不能使用" << endl;
 				system("pause");
 				system("cls");
 			}
@@ -470,12 +470,12 @@ void Bag_Show_dj(Object_dj *dj)
 					cout << "介绍：" << dj->getExplain() << endl;
 					cout << "数量：" << dj->getNumber() << " 个" << endl;
 					cout << "售价：" << dj->getPrice() << " 角/个" << endl;
-					cout << "请输入您要删除的数量" << endl;
+					cout << "信息：请输入您要删除的数量" << endl;
 					cin >> anjian;
 					system("cls");
 					if (anjian > dj->getNumber() || anjian < 0)
 					{
-						cout << "哎哎,别着急，数字都打错了" << endl;
+						cout << "信息：哎哎,别着急，数字都打错了" << endl;
 						system("pause");
 						system("cls");
 					}
@@ -488,7 +488,7 @@ void Bag_Show_dj(Object_dj *dj)
 						cout << "介绍：" << dj->getExplain() << endl;
 						cout << "数量：" << dj->getNumber() << " 个" << endl;
 						cout << "售价：" << dj->getPrice() << " 角/个" << endl;
-						cout << "你卖掉了" << anjian << "个" << xuantie.getName() << ",获得了" << anjian*xuantie.getPrice() << "毛。" << endl;
+						cout << "信息：你卖掉了" << anjian << "个" << dj->getName() << ",获得了" << anjian*dj->getPrice() << "毛。" << endl;
 						if (dj->getNumber() == 0)
 						{
 							dj->setName("");
@@ -510,7 +510,7 @@ void Bag_Show_dj(Object_dj *dj)
 	}
 	else
 	{
-		cout << "该处没有物品" << endl;
+		cout << "信息：该处没有物品" << endl;
 		system("pause");
 		system("cls");
 	}
@@ -590,7 +590,7 @@ void Map_Show()
 																		system("cls");
 																		if (anjian == 1)
 																		{
-																			cout << "操场上什么都没有，你不费吹灰之力就占领了它\n";
+																			cout << "信息：操场上什么都没有，你不费吹灰之力就占领了它\n";
 																			system("pause");
 																			system("cls");
 																			a_a.set(1, 1);
@@ -600,13 +600,13 @@ void Map_Show()
 																		{
 																			if (a_b.getKaiqi() == 1)
 																			{
-																				cout << "你已经到达了学校大门\n";
+																				cout << "信息：你已经到达了学校大门\n";
 																				system("pause");
 																				system("cls");
-																				cout << "你发现了一个看门的\n";
+																				cout << "信息：你发现了一个看门的\n";
 																				system("pause");
 																				system("cls");
-																				cout << "是否迎战\n1)是 0)否\n";
+																				cout << "信息：是否迎战\n1)是 0)否\n";
 																				cin >> anjian;
 																				system("cls");
 																				if (anjian == 1)
@@ -615,7 +615,6 @@ void Map_Show()
 																					if (anjian == 211)
 																					{
 																						a_b.set(1, 1);
-																						a_c.set(0, 1);
 																						Bag_Get_dj(&doorKey);
 																						cout << "信息：你获得了看门大叔所掉落的大门钥匙。" << endl;
 																						system("pause");
@@ -624,7 +623,7 @@ void Map_Show()
 																				}
 																				else if (anjian == 0)
 																				{
-																					cout << "你失败了\n";
+																					cout << "信息：你失败了\n";
 																					system("pause");
 																					system("cls");
 																				}
@@ -638,49 +637,49 @@ void Map_Show()
 																		}
 																		else if (anjian == 3)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 4)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 5)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 6)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 7)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 8)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 9)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
 																		else if (anjian == 10)
 																		{
-																			cout << "该关卡未开启\n";
+																			cout << "信息：该关卡未开启\n";
 																			system("pause");
 																			system("cls");
 																		}
@@ -692,7 +691,7 @@ void Map_Show()
 																}
 																else if (anjian == 2)
 																{
-																	cout << "该关卡未开启\n";
+																	cout << "信息：该关卡未开启\n";
 																	system("pause");
 																	system("cls");
 																}
@@ -704,7 +703,7 @@ void Map_Show()
 														}
 														else if (anjian == 2)
 														{
-															cout << "该关卡未开启\n";
+															cout << "信息：该关卡未开启\n";
 															system("pause");
 															system("cls");
 														}
@@ -716,7 +715,7 @@ void Map_Show()
 												}
 												else if (anjian == 2)
 												{
-													cout << "该关卡未开启\n";
+													cout << "信息：该关卡未开启\n";
 													system("pause");
 													system("cls");
 												}
@@ -728,7 +727,7 @@ void Map_Show()
 										}
 										else if (anjian == 2)
 										{
-											cout << "该关卡未开启\n";
+											cout << "信息：该关卡未开启\n";
 											system("pause");
 											system("cls");
 										}
@@ -740,7 +739,7 @@ void Map_Show()
 								}
 								else if (anjian == 2)
 								{
-									cout << "该关卡未开启\n";
+									cout << "信息：该关卡未开启\n";
 									system("pause");
 									system("cls");
 								}
@@ -753,7 +752,7 @@ void Map_Show()
 						}
 						else if (anjian == 2)
 						{
-							cout << "该关卡未开启\n";
+							cout << "信息：该关卡未开启\n";
 							system("pause");
 							system("cls");
 						}
@@ -765,7 +764,7 @@ void Map_Show()
 				}
 				else if (anjian == 2)
 				{
-					cout << "该关卡未开启\n";
+					cout << "信息：该关卡未开启\n";
 					system("pause");
 					system("cls");
 				}
@@ -777,7 +776,7 @@ void Map_Show()
 		}
 		else if (anjian == 2)								//河外星系
 		{
-			cout << "该关卡未开启\n";
+			cout << "信息：该关卡未开启\n";
 		}
 		else												//返回
 		{
@@ -792,7 +791,7 @@ void Skill_Show()
 {
 	if (Level < 0)
 	{
-		cout << "你的等级不足（5级开启）\n";
+		cout << "信息：你的等级不足（5级开启）\n";
 		system("pause");
 		system("cls");
 		
@@ -819,7 +818,7 @@ void Skill_Show()
 			Skill_Study();
 		else if (anjian == 6)
 		{
-			cout << "该功能未开启\n";
+			cout << "信息：该功能未开启\n";
 			system("pause");
 			system("cls");
 		}
@@ -923,7 +922,7 @@ void System_Settings_Show()
 			cin >> color[7];
 			system(color); 
 			system("cls");
-			cout << "设置成功！\n";
+			cout << "信息：设置成功！\n";
 			system("pause");
 			system("cls");
 		}
@@ -934,14 +933,14 @@ void System_Settings_Show()
 void System_Save_Show()
 {
 	cout << "保存：" << endl;
-	cout << "该功能未开启" << endl;
+	cout << "信息：该功能未开启" << endl;
 	system("pause");
 	system("cls");
 }
 void System_About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.24" << endl;
+	cout << "版本：1.25" << endl;
 	cout << "官网：http://www.211tzbd.tk" << endl;
 	system("pause");
 	system("cls");
@@ -1070,14 +1069,14 @@ void Fighting(Boss boss)
 		//判断胜负
 		if (fight_role_hp == 0)
 		{
-			cout << "你失败了" << endl;
+			cout << "信息：你失败了" << endl;
 			system("pause");
 			system("cls");
 			break;
 		}
 		if (fight_boss_hp == 0)
 		{
-			cout << "你胜利了,获得了" << boss.getExp() << "点经验，而且还捡到了他掉落的" << boss.getMoney() << "毛钱" << endl;
+			cout << "信息：你胜利了,获得了" << boss.getExp() << "点经验，而且还捡到了他掉落的" << boss.getMoney() << "毛钱" << endl;
 			Role_LevelUp(boss.getExp());
 			Money += 5;
 
@@ -1212,42 +1211,42 @@ void Fighting(Boss boss)
 		}
 	}
 }
-void FIghting_role_type1(unsigned int *hp, unsigned int *shield, unsigned int *role_mp,Boss boss,Skill skill)
+void FIghting_role_type1(unsigned int *boss_hp, unsigned int *boss_shield, unsigned int *role_mp,Boss boss,Skill skill)
 {
 	if (*role_mp>skill.getMp())
 	{
-		if (*shield > 0)//当敌方有护盾时
+		if (*boss_shield > 0)//当敌方有护盾时
 		{
 			if (rand() % 100 < BaoJi)//如果暴击
 			{
-				if ((skill.getHurt() * GongJi / 50 - boss.getFangyu() < *shield))//如果伤害小于护盾
+				if ((skill.getHurt() * GongJi / 50 - boss.getFangyu() < *boss_shield))//如果伤害小于护盾
 				{
-					*shield -= skill.getHurt() * GongJi / 50 - boss.getFangyu();
+					*boss_shield -= skill.getHurt() * GongJi / 50 - boss.getFangyu();
 					cout << "状态：你使用了" << "普通攻击" << "触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
 					cout << "由于对方拥有护盾，你实际造成了0点伤害" << endl;
 				}
 				else//如果伤害大于护盾
 				{
-					*hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *shield) > *hp ? *hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *shield);
+					*boss_hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *boss_shield) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu() - *boss_shield);
 					cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 50 - boss.getFangyu()) - *shield << "点伤害" << endl;
-					*shield = 0;
+					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 50 - boss.getFangyu()) - *boss_shield << "点伤害" << endl;
+					*boss_shield = 0;
 				}
 			}
 			else//如果没暴击
 			{
-				if ((skill.getHurt() * GongJi / 100 - boss.getFangyu() < *shield))//如果伤害小于护盾
+				if ((skill.getHurt() * GongJi / 100 - boss.getFangyu() < *boss_shield))//如果伤害小于护盾
 				{
-					*shield -= skill.getHurt() * GongJi / 100 - boss.getFangyu();
+					*boss_shield -= skill.getHurt() * GongJi / 100 - boss.getFangyu();
 					cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
 					cout << "由于对方拥有护盾，你实际造成了0点伤害" << endl;
 				}
 				else//如果伤害大于护盾
 				{
-					*hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *shield) > *hp ? *hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *shield);
+					*boss_hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *boss_shield) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu() - *boss_shield);
 					cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害，";
-					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 100 - boss.getFangyu()) - *shield << "点伤害" << endl;
-					*shield = 0;
+					cout << "由于对方拥有护盾，你实际造成了" << (skill.getHurt() * GongJi / 100 - boss.getFangyu()) - *boss_shield << "点伤害" << endl;
+					*boss_shield = 0;
 				}
 			}
 		}
@@ -1255,12 +1254,12 @@ void FIghting_role_type1(unsigned int *hp, unsigned int *shield, unsigned int *r
 		{
 			if (rand() % 100 < BaoJi)//如果暴击
 			{
-				*hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu()) > *hp ? *hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu());
+				*boss_hp -= (skill.getHurt() * GongJi / 50 - boss.getFangyu()) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 50 - boss.getFangyu());
 				cout << "状态：你使用了" << "普通攻击" << "，触发了暴击，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 50 << "点伤害," << endl;
 			}
 			else//如果没暴击
 			{
-				*hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu()) > *hp ? *hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu());
+				*boss_hp -= (skill.getHurt() * GongJi / 100 - boss.getFangyu()) > *boss_hp ? *boss_hp : (skill.getHurt() * GongJi / 100 - boss.getFangyu());
 				cout << "状态：你使用了" << "普通攻击" << "，对" << boss.getName() << "造成了" << skill.getHurt() * GongJi / 100 - boss.getFangyu() << "点伤害," << endl;
 			}
 		}

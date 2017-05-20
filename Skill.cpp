@@ -11,23 +11,23 @@ string Skill::getName() const
 {
 	return name;
 }
-int Skill::getHurt() const
+unsigned int Skill::getHurt() const
 {
 	return hurt; 
 }
-int Skill::getType() const
+unsigned int Skill::getType() const
 {
 	return type;
 }
-int Skill::getMp() const
+unsigned int Skill::getMp() const
 {
 	return mp;
 }
-int Skill::getLevel() const
+unsigned int Skill::getLevel() const
 {
 	return level;
 }
-int Skill::getLevelupmoney() const
+unsigned int Skill::getLevelupmoney() const
 {
 	return levelupmoney;
 }
