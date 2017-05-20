@@ -44,9 +44,10 @@ Object_dj bag_6("", "", 0, 0, 0, 6);
 Object_dj bag_7("", "", 0, 0, 0, 7);
 Object_dj bag_8("", "", 0, 0, 0, 8);
 Object_dj bag_9("", "", 0, 0, 0, 9);
-const Object_dj xuantie("玄铁", "在炼丹炉内打造装备所需的材料", 2, 1);
-const Object_dj sichou("丝绸", "在炼丹炉内打造装备所需的材料", 2, 2);
-const Object_dj tanmu("檀木", "在炼丹炉内打造装备所需的材料", 2, 3);
+const Object_dj doorKey("大门钥匙", "看门大叔遗落的钥匙，貌似可以开启大门", 5,1);
+const Object_dj xuantie("玄铁", "在炼丹炉内打造装备所需的材料", 2, 2);
+const Object_dj sichou("丝绸", "在炼丹炉内打造装备所需的材料", 2, 3);
+const Object_dj tanmu("檀木", "在炼丹炉内打造装备所需的材料", 2, 4);
 
 void Role_Show(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_); 
 void Role_CheckName();
@@ -344,7 +345,7 @@ void Bag_Show()
 
 	}
 }
-void Bag_Get_dj(Object_dj *dj)
+void Bag_Get_dj(const Object_dj *dj)
 {
 
 	//判断是否已有该物品，若已有，数量+1
@@ -457,7 +458,7 @@ void Bag_Show_dj(Object_dj *dj)
 			system("cls");
 			if (anjian == 1)
 			{
-				cout << "该物品不能使用";
+				cout << "该物品不能使用" << endl;
 				system("pause");
 				system("cls");
 			}
@@ -615,6 +616,10 @@ void Map_Show()
 																					{
 																						a_b.set(1, 1);
 																						a_c.set(0, 1);
+																						Bag_Get_dj(&doorKey);
+																						cout << "信息：你获得了看门大叔所掉落的大门钥匙。" << endl;
+																						system("pause");
+																						system("cls");
 																					}
 																				}
 																				else if (anjian == 0)
@@ -936,7 +941,7 @@ void System_Save_Show()
 void System_About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.23" << endl;
+	cout << "版本：1.24" << endl;
 	cout << "官网：http://www.211tzbd.tk" << endl;
 	system("pause");
 	system("cls");

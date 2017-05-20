@@ -7,6 +7,7 @@ class Skill
 {
 public:
 	Skill(string _name = "", int _hurt = 0, int _type = 0, int _mp = 0, int _levelupmoney = 0, int _level = 0);
+	~Skill();
 	string getName() const;
 	int getHurt() const;
 	int getType() const;

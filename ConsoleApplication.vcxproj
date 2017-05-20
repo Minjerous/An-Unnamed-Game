@@ -81,6 +81,8 @@
   <ItemGroup>
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Guanqia.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Object_zb.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="源.cpp" />
     <ClCompile Include="Object_dj.cpp" />
@@ -88,6 +90,8 @@
   <ItemGroup>
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Guanqia.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Object_zb.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="Object_dj.h" />
   </ItemGroup>

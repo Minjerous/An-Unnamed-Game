@@ -5,8 +5,9 @@ using namespace std;
 class Guanqia
 {
 public:
+	Guanqia(int _number, string _name, bool _kaiqi = false, bool _zhanling = false); 
+	~Guanqia();
 	int getKaiqi() const;
-	Guanqia(int _number, string _name, bool _kaiqi = false, bool _zhanling = false);
 	void get() const;
 	void set(bool _zhanling, bool _kaiqi); 
 private:

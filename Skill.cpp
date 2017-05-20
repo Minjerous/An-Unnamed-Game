@@ -4,6 +4,9 @@
 using namespace std;
 Skill::Skill(string _name, int _hurt, int _type, int _mp, int _levelupmoney, int _level) :
 	name(_name), hurt(_hurt), type(_type), mp(_mp), levelupmoney(_levelupmoney), level(_level){}
+Skill::~Skill()
+{
+}
 string Skill::getName() const
 {
 	return name;
