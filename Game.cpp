@@ -10,9 +10,9 @@ int Money = 0;
 
 void bag();
 void map();
-void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_); 
+void about();
+void role(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_); 
 void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_);
-void Version(float version);
 void CheckName();
 
 class Guanqia
@@ -58,9 +58,12 @@ class Guanqia
 Guanqia a_a;Guanqia a_b;Guanqia a_c;Guanqia a_d;Guanqia a_e;Guanqia a_f;Guanqia a_g;Guanqia a_h;Guanqia a_i;Guanqia a_j;
 int main()
 {
-	Version(1.08f);
+	
 	CheckName();
-	zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);
+	system("pause"); 
+	system("cls"); 
+	cout<<"你现在的属性为：\n" ;
+	role(GongJi, FangYu, HP, Money, Level, Exp);
 	a_a.init(1,"大操场  ") ;a_a.set(0,1);
 	a_b.init(2,"大门    ") ;
 	a_c.init(3,"男生宿舍") ;
@@ -71,19 +74,19 @@ int main()
 	a_h.init(8,"教学楼  ") ;
 	a_i.init(9,"食堂    ") ;
 	a_j.init(10,"女生宿舍") ;
-	system("pause"); 
 
 	while (1 == 1)
 	{
 		cout << "请选择你要做什么：\n";
-		cout << "1)背包(开发中)\n2)地图\n3)状态\n";
+		cout << "1)背包(开发中)\n2)地图\n3)角色\n4)关于\n";
 		cin >> anjian;
-		cout << "\n\n\n\n\n\n\n\n\n\n";
+		system("cls"); 
 		switch (anjian)
 		{
 			case 1:bag(); break;
 			case 2:map(); break;
-			case 3:zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);  break;
+			case 3:role(GongJi, FangYu, HP, Money, Level, Exp);  break;
+			case 4:about();break; 
 			default:cout << "输入错误\n\n";
 		}
 	}
@@ -92,23 +95,27 @@ int main()
 
 
 
-
-void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_)
+void about()
+{
+	cout<<"关于："<<endl; 
+	cout << "版本：1.09" << endl;
+	system("pause"); 
+	system("cls"); 
+}
+void role(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 {
 	int ZhanDouLi = GongJi * 2 + FangYu * 2 + HP;
 	int MaxExp = Level * 10;
-	cout << "你的战斗力为" << ZhanDouLi << "；\n";
-	cout << "你的生命值为" << HP << "；\n";
-	cout << "你的攻击力为" << GongJi << "；\n";
-	cout << "你的防御力为" << FangYu << "；\n";
-	cout << "你的等级为" << Level << "级；\n";
-	cout << "你的经验值为" << Exp << "/" << MaxExp << "；\n";
-	cout << "你的钢镚子为" << Money << "角；\n";
+	cout << "战斗力:" << ZhanDouLi << "；\n\n";
+	cout << "生命值:" << HP << "；\n\n";
+	cout << "攻击力:" << GongJi << "；\n";
+	cout << "防御力:" << FangYu << "；\n\n";
+	cout << "等级:" << Level << "级；\n";
+	cout << "经验值:" << Exp << "/" << MaxExp << "；\n\n";
+	cout << "钢镚子:" << Money << "角；\n";
 	cout << endl; 
-}
-void Version(float version)
-{
-	cout << "版本：" << version << endl;
+	system("pause"); 
+	system("cls"); 
 }
 void bag()
 {
@@ -121,55 +128,55 @@ void map()
 	{
 		cout << "1)银河系 2）河外星系(未开启) 3)返回\n";
 		cin >> anjian;
-		cout << "\n\n\n\n\n\n\n\n\n\n";
+		system("cls");
 		if (anjian == 1)									//银河系
 		{
 			while (1 == 1)
 			{
 				cout << "1)太阳系 2）其他星系 3)返回\n";
 				cin >> anjian;
-				cout << "\n\n\n\n\n\n\n\n\n\n";
+				system("cls");
 				if ( anjian == 1)							//太阳系
 				{
 					while (1 == 1)
 					{
 						cout << "1)地球 2)其他行星或恒星及陨石带等 3)返回\n";
 						cin >> anjian;
-						cout << "\n\n\n\n\n\n\n\n\n\n";
+						system("cls");
 						if (anjian == 1)
 						{
 							while (1 == 1)
 							{
 								cout << "1中国 2）外国 3）返回\n"; cin >> anjian;
-								cout << "\n\n\n\n\n\n\n\n\n\n";
+								system("cls");
 								if (anjian == 1)			//中国
 								{
 									while (1 == 1)
 									{
 										cout << "1)山东省 2)其他省份 3)返回\n";
 										cin >> anjian;
-										cout << "\n\n\n\n\n\n\n\n\n\n"; 
+										system("cls");
 										if (anjian == 1)
 										{
 											while (1 == 1)
 											{
 												cout << "1)滨州市 2)其他市 3)返回\n";
 												cin >> anjian;
-												cout << "\n\n\n\n\n\n\n\n\n\n";
+												system("cls");
 												if (anjian == 1)
 												{
 													while (1 == 1)
 													{
 														cout << "1)惠民县 2)其他县 3)返回\n";
 														cin >> anjian;
-														cout << "\n\n\n\n\n\n\n\n\n\n";
+														system("cls");
 														if (anjian == 1)
 														{
 															while (1 == 1)
 															{
 																cout << "1)惠民县晨光实验学校 2)其他地方 3)返回\n";
 																cin >> anjian;
-																cout << "\n\n\n\n\n\n\n\n\n\n";
+																system("cls");
 																if (anjian == 1)
 																{
 																	while (1 == 1)
@@ -186,48 +193,68 @@ void map()
 																		a_j.get();
 																		cout<<"11)\t返回\n";	
 																		cin >> anjian;
-																		cout << "\n\n\n\n\n\n\n\n\n\n";
+																		system("cls"); 
 																		if (anjian == 1)
 																		{
 																			cout<<"操场上什么都没有，你不会吹灰之力就占领了他\n";
+																			system("pause"); 
+																			system("cls"); 
 																			a_a.set(1,1);
 																			a_b.set(0,1);
 																		}
 																		else if (anjian == 2)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 3)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 4)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 5)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 6)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 7)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 8)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 9)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else if (anjian == 10)
 																		{
 																			cout << "该关卡未开启\n";
+																			system("pause"); 
+																			system("cls"); 
 																		}
 																		else
 																		{
@@ -238,6 +265,8 @@ void map()
 																else if (anjian == 2)
 																{
 																	cout << "该关卡未开启\n";
+																	system("pause"); 
+																	system("cls"); 
 																}
 																else
 																{
@@ -248,6 +277,8 @@ void map()
 														else if (anjian == 2)
 														{
 															cout << "该关卡未开启\n";
+															system("pause"); 
+															system("cls"); 
 														}
 														else
 														{
@@ -258,6 +289,8 @@ void map()
 												else if (anjian == 2)
 												{
 													cout << "该关卡未开启\n";
+													system("pause"); 
+													system("cls"); 
 												}
 												else
 												{
@@ -268,6 +301,8 @@ void map()
 										else if (anjian == 2)
 										{
 											cout << "该关卡未开启\n";
+											system("pause"); 
+											system("cls"); 
 										}
 										else
 										{
@@ -278,6 +313,8 @@ void map()
 								else if (anjian == 2)
 								{
 									cout << "该关卡未开启\n";
+									system("pause"); 
+									system("cls"); 
 								}
 								else
 								{
@@ -289,6 +326,8 @@ void map()
 						else if (anjian == 2)
 						{
 							cout << "该关卡未开启\n";
+							system("pause"); 
+							system("cls"); 
 						}
 						else
 						{
@@ -298,7 +337,9 @@ void map()
 				}
 				else if (anjian == 2)
 				{
-					cout << "该关卡未开启\n";					//其他星系
+					cout << "该关卡未开启\n";	
+					system("pause"); 
+					system("cls");
 				}
 				else
 				{
