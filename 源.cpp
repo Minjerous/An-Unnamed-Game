@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 
-string Name; int a;
+string Name; 
 int HP = 100, GongJi = 20, FangYu = 20;
-int Level = 1, Exp = 0;
+int Level = 1, Exp = 0; int MaxExp;
 int Money = 0;
-int MaxExp;
-void XianShi(int , int FangYu_, int HP_,int Money_,int Level_,int Exp_)
+
+void zhuangtai(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 {
 	int ZhanDouLi = GongJi * 2 + FangYu * 2 + HP;
 	int MaxExp = Level * 10;
@@ -17,9 +17,20 @@ void XianShi(int , int FangYu_, int HP_,int Money_,int Level_,int Exp_)
 	cout << "你的防御力为" << FangYu << "；\n";
 	cout << "你的等级为" << Level << "级；\n";
 	cout << "你的经验值为" << Exp << "/" << MaxExp << "；\n";
-	cout << "你的铜币为" << Money << "；\n";
+	cout << "你的钢镚子为" << Money << "角；\n";
+	cout << endl; 
 }
-void Change(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_)
+void bag()
+{
+	int zero = 0;
+	cout << 0 / zero;
+}
+void map()
+{
+	int zero = 0;
+	cout << 0 / zero;
+}
+void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_)
 {
 	int MaxExp_ = 10 * Level_;
 	while(Exp_ >= MaxExp_)
@@ -72,15 +83,38 @@ void CheckName()
 		cout << "你好，" << Name << "，欢迎进入这个逗比的游戏。" << endl << endl;
 	}
 }
+void DaiDing()
+{
+	int anjian;
+	while (1==1)
+	{
+		cout << "请选择你要做什么：\n";
+		cout << "1)背包(开发中)\n2)地图(开发中)\n3)状态\n";
+		cin >> anjian;
+		cout << "\n\n\n\n\n\n\n\n\n\n";
+		switch (anjian)
+		{
+		case 1:bag(); break;
+		case 2:map(); break;
+		case 3:zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);  break;
+		default:cout << "输入错误\n\n";
+		}
+	}
+}
 
 int main()
 {
-	Version(1.05f);
+	Version(1.06f);
 	CheckName();
-	XianShi(GongJi, FangYu, HP, Money, Level, Exp);
+	zhuangtai(GongJi, FangYu, HP, Money, Level, Exp);
+	system("pause"); 
 
-	system("pause");
-	int zero = 0;
-	cout << 0 / zero;
+	while (1 == 1)
+	{
+		DaiDing();
+	}
+
+
+	
 	return 0;
 }
