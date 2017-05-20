@@ -1,57 +1,64 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 using namespace std;
 
-string Name;
-void XianShi(int GongJi, int FangYu, int HP)
+string Name; 
+int HP = 100, GongJi = 20, FangYu = 20;
+int Level = 1, Exp = 0, MaxExp;
+int Money = 0;
+
+void XianShi(int GongJi, int FangYu, int HP,int Money,int Level,int Exp)
 {
 	int ZhanDouLi = GongJi * 2 + FangYu * 2 + HP;
-	cout << "ÄãµÄÕ½¶·Á¦Îª" << ZhanDouLi << "\n";
-	cout << "ÄãµÄÉúÃüÖµÎª" << HP << "\n";
-	cout << "ÄãµÄ¹¥»÷Á¦Îª" << GongJi << "\n";
-	cout << "ÄãµÄ·ÀÓùÁ¦Îª" << FangYu << "\n";
+	int MaxExp = Level * 10;
+	cout << "ä½ çš„æˆ˜æ–—åŠ›ä¸º" << ZhanDouLi << "ï¼›\n";
+	cout << "ä½ çš„ç”Ÿå‘½å€¼ä¸º" << HP << "ï¼›\n";
+	cout << "ä½ çš„æ”»å‡»åŠ›ä¸º" << GongJi << "ï¼›\n";
+	cout << "ä½ çš„é˜²å¾¡åŠ›ä¸º" << FangYu << "ï¼›\n";
+	cout << "ä½ çš„ç­‰çº§ä¸º" << Level << "çº§ï¼›\n";
+	cout << "ä½ çš„ç»éªŒå€¼ä¸º" << Exp << "/" << MaxExp << "ï¼›\n";
 }
 void Version(float version)
 {
-	cout << "°æ±¾£º" << version << endl;
+	cout << "ç‰ˆæœ¬ï¼š" << version << endl;
 }
 void CheckName()
 {
-	cout << "ÇëÊäÈëÄãµÄÃû×Ö:\n";
+	cout << "è¯·è¾“å…¥ä½ çš„åå­—:\n";
 	cin >> Name;
-	if (Name == "Ð¤º£Ñó" || Name == "º£Ñó" || Name == "xiaohaiyang" || Name == "XIAOHAIYANG" || Name == "haiyang" || Name == "HAIYANG" || Name == "º£ÂåÖ®Éñ")
+	if (Name == "è‚–æµ·æ´‹" || Name == "æµ·æ´‹" || Name == "xiaohaiyang" || Name == "XIAOHAIYANG" || Name == "haiyang" || Name == "HAIYANG" || Name == "æµ·æ´›ä¹‹ç¥ž")
 	{
-		cout << "º£Ñó£¬¿´¼ûÎÒµØÀí¿Î±¾ÁËÂð£¿\n\n";
+		cout << "æµ·æ´‹ï¼Œçœ‹è§æˆ‘åœ°ç†è¯¾æœ¬äº†å—ï¼Ÿ\n\n";
+	}
+	else if (Name == "è‚–åŸ¹æˆ" || Name == "åŸ¹æˆ" || Name == "xiaopeicheng" || Name == "XIAOPEICHENG" || Name == "peicheng" || Name == "PEICHENG")
+	{
+			cout << "åŸ¹æˆï¼Œå®žè¡Œè®¡åˆ’ï¼\n\n";
+	}
+	else if (Name == "é©¬è¶…" || Name == "machao" || Name == "MACHAO" || Name == "ä¿®ç½—é©¬è¶…")
+	{
+		cout << "é©¬è¶…ï¼Œåˆ«å¿˜äº†åœ¨211åŒºçŽ©å‘€ï¼\n\n";
+	}
+	else if (Name == "å·©æ–°ä½™" || Name == "æ–°ä½™" || Name == "gongxinyu" || Name == "GONGXINYU" || Name == "xinyu" || Name == "XINYU" || Name == "è‰å¸½è·¯é£ž")
+	{
+		cout << "æ–°ä½™ï¼Œä½ çš„è®¸æ„¿æ ‘æˆé•¿åº¦åˆæ»¡äº†....\n\n";
 	}
 	else
-		if (Name == "Ð¤Åà³É" || Name == "Åà³É" || Name == "xiaopeicheng" || Name == "XIAOPEICHENG" || Name == "peicheng" || Name == "PEICHENG")
-		{
-			cout << "Åà³É£¬ÊµÐÐ¼Æ»®£¡\n\n";
-		}
-		else
-			if (Name == "Âí³¬" || Name == "machao" || Name == "MACHAO" || Name == "ÐÞÂÞÂí³¬")
-			{
-				cout << "Âí³¬£¬±ðÍüÁËÔÚ211ÇøÍæÑ½£¡\n\n";
-			}
-			else
-			{
-				cout << "ÄãºÃ£¬" << Name << "£¬»¶Ó­½øÈëÕâ¸ö¶º±ÈµÄÓÎÏ·¡£" << endl << endl;
-			}
+	{
+		cout << "ä½ å¥½ï¼Œ" << Name << "ï¼Œæ¬¢è¿Žè¿›å…¥è¿™ä¸ªé€—æ¯”çš„æ¸¸æˆã€‚" << endl << endl;
+	}
 }
 
 int main()
 {
-	Version(1.035f);
+	Version(1.04f);
 
 	CheckName();
-
-	int HP = 100;
-	int GongJi = 20;
-	int FangYu = 20;
-	XianShi(GongJi, FangYu, HP);
+	
+	
+	XianShi(GongJi, FangYu, HP, Money, Level, Exp);
 	system("pause");
 	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
-	cout << "´íÎó£º0x80072ee2		ÄúµÄ¼ÆËã»úÅäÖÃ²»×ãÒÔÔËÐÐ¸ÃÓÎÏ·£¬Çë¸ü»»Ó²¼þ»ò¼ÆËã»ú.";
+	cout << "é”™è¯¯ï¼š0x80072ee2		æ‚¨çš„è®¡ç®—æœºé…ç½®ä¸è¶³ä»¥è¿è¡Œè¯¥æ¸¸æˆï¼Œè¯·æ›´æ¢ç¡¬ä»¶æˆ–è®¡ç®—æœº.";
 	system("pause");
 	return 0;
 }
