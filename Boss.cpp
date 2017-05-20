@@ -1,12 +1,13 @@
-#include <string>
+﻿#include <string>
 #include "Boss.h"
-Boss::Boss(string _name, int _hp, int _gongji, int _fangyu,int _exp)
+Boss::Boss(string _name, int _hp, int _gongji, int _fangyu,int _exp,int _money)
 {
 	name = _name;
 	hp = _hp;
 	gongji = _gongji;
 	fangyu = _fangyu;
 	exp = _exp;
+	money = _money;
 }
 int Boss::getHp()
 {
@@ -27,6 +28,10 @@ int Boss::getFangyu()
 int Boss::getExp()
 {
 	return exp;
+}
+int Boss::getMoney()
+{
+	return money;
 }
 
 void Boss::setSkill1(string name1, int hurt1, int type1)

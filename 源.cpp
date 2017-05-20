@@ -10,8 +10,8 @@ using namespace std;
 
 string Name;
 int anjian;
-int Hp = 50, GongJi = 10, FangYu = 0;
-int Level = 1, Exp = 0; int MaxExp = 10;
+int Hp = 50, Mp = 50, GongJi = 10, FangYu = 0;
+int Level = 1, Exp = 0, MaxExp = 10;
 int Money = 0;
 
 Skill putonggongji ("普通攻击", 80, 1 );
@@ -27,7 +27,7 @@ Guanqia a_i(9, "食堂    ");
 Guanqia a_j(10, "女生宿舍");
 
 
-Boss kanmendashu ( "看门大叔", 100, 10, 0 ,5);
+Boss kanmendashu ( "看门大叔", 100, 10, 0 ,5,5);
 Object_dj bag_1("", "", 0, 0);
 Object_dj bag_2("", "", 0, 0);
 Object_dj bag_3("", "", 0, 0);
@@ -122,14 +122,14 @@ int main()
 void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_)
 {
 	cout << "昵称：" << Name << "；\n\n";
-	int ZhanDouLi = GongJi * 2 + FangYu * 2 + Hp;
+	int ZhanDouLi = Hp + Mp + GongJi * 2 + FangYu * 2;
 	cout << "战斗力:" << ZhanDouLi << "；\n\n";
-	cout << "生命值:" << Hp << "；\n\n";
+	cout << "生命值:" << Hp << "；\n";
+	cout << "魔法值:" << Mp << "；\n\n";
 	cout << "攻击力:" << GongJi << "；\n";
 	cout << "防御力:" << FangYu << "；\n\n";
 	cout << "等级:" << Level << "级；\n";
-	cout << "经验值:" << Exp << "/" << MaxExp << "；\n\n";
-	cout << "钢镚子:" << Money / 10 << " 元 " << Money % 10 << " 角；\n";
+	cout << "经验值:" << Exp << "/" << MaxExp << "；\n";
 	cout << endl;
 	system("pause");
 	system("cls");
@@ -262,8 +262,10 @@ void Fighting(Boss boss)
 		}
 		if (fight_boss_hp == 0)
 		{
-			cout << "你胜利了,获得了"<<boss.getExp()<<"点经验" << endl;
+			cout << "你胜利了,获得了"<<boss.getExp()<<"点经验，而且还捡到了他掉落的"<<boss.getMoney()<<"毛钱" << endl;
 			LevelUp(boss.getExp());
+			Money += 5;
+
 			system("pause");
 			system("cls");
 			anjian = 211;
@@ -384,7 +386,7 @@ void Fighting(Boss boss)
 void About()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.14" << endl;
+	cout << "版本：1.15" << endl;
 	system("pause");
 	system("cls");
 }
@@ -818,9 +820,10 @@ void LevelUp(int _exp)
 		GongJi += 4;
 		FangYu += 2;
 		Hp += 20;
+		Mp += 15;
 
 		
-		cout << "恭喜你升到了"<<Level<<"级了，同时获得了10毛~"<<endl;
+		cout << "恭喜你升到了"<<Level<<"级了，同时获得了10角~"<<endl;
 		Money += 10;
 	}
 	

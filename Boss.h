@@ -1,13 +1,14 @@
-#include <string>
+﻿#include <string>
 using namespace std;
 class Boss
 {
 public:
-	Boss(string _name,int _Hp,int _Gongji,int _Fangyu,int _exp);
+	Boss(string _name,int _Hp,int _Gongji,int _Fangyu,int _exp,int _money);
 	int getHp();
 	int getGongji();
 	int getFangyu();
 	int getExp();
+	int getMoney();
 	string getName();
 
 
@@ -25,5 +26,5 @@ private:
 	int gongji;
 	int fangyu;
 	int exp;
-
+	int money;
 };
