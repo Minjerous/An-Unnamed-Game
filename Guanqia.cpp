@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "关卡.h"
+#include "Guanqia.h"
 using namespace std;
 int Guanqia::getKaiqi()
 {

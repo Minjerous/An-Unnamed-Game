@@ -18,30 +18,30 @@
     <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="关卡.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="技能.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="道具.cpp">
+    <ClCompile Include="Object_dj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Guanqia.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="关卡.h">
+    <ClInclude Include="Skill.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="技能.h">
+    <ClInclude Include="Object_dj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Guanqia.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Boss.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="道具.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -80,16 +80,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Boss.cpp" />
-    <ClCompile Include="关卡.cpp" />
-    <ClCompile Include="技能.cpp" />
+    <ClCompile Include="Guanqia.cpp" />
+    <ClCompile Include="Skill.cpp" />
     <ClCompile Include="源.cpp" />
-    <ClCompile Include="道具.cpp" />
+    <ClCompile Include="Object_dj.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boss.h" />
-    <ClInclude Include="关卡.h" />
-    <ClInclude Include="技能.h" />
-    <ClInclude Include="道具.h" />
+    <ClInclude Include="Guanqia.h" />
+    <ClInclude Include="Skill.h" />
+    <ClInclude Include="Object_dj.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

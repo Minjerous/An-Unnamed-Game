@@ -1,5 +1,5 @@
 ﻿#include <string>
-#include "道具.h"
+#include "Object_dj.h"
 Object_dj::Object_dj(string _name, string _explain, int _price,int _id)
 {
 	name = _name;
