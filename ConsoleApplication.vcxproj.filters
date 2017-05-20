@@ -27,6 +27,9 @@
     <ClCompile Include="Boss.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="道具.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="关卡.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Boss.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="道具.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

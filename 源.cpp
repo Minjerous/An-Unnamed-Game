@@ -4,6 +4,7 @@
 #include <ctime>
 #include "关卡.h"
 #include "技能.h"
+#include "道具.h"
 #include "Boss.h"
 using namespace std;
 
@@ -27,6 +28,18 @@ Guanqia a_j(10, "女生宿舍");
 
 
 Boss kanmendashu ( "看门大叔", 100, 10, 0 ,5);
+Object_dj bag_1("", "", 0, 0);
+Object_dj bag_2("", "", 0, 0);
+Object_dj bag_3("", "", 0, 0);
+Object_dj bag_4("", "", 0, 0);
+Object_dj bag_5("", "", 0, 0);
+Object_dj bag_6("", "", 0, 0);
+Object_dj bag_7("", "", 0, 0);
+Object_dj bag_8("", "", 0, 0);
+Object_dj bag_9("", "", 0, 0);
+Object_dj xuantie("玄铁","在炼丹炉内打造装备所需的材料",2,1);
+Object_dj sichou("丝绸", "在炼丹炉内打造装备所需的材料", 2,2);
+Object_dj tanmu("檀木", "在炼丹炉内打造装备所需的材料", 2,3);
 
 void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_); 
 void Bag();
@@ -36,11 +49,24 @@ void About();
 void Fighting(Boss boss);
 
 void LevelUp(int _exp);
+void Get_object_dj(Object_dj *dj);
+void Get_object_zb();
+void Show_object_dj(Object_dj *dj);
 void CheckName();
 
 
 int main()
 {
+	//初始化背包数据成员
+	bag_1.setOrder(1);
+	bag_2.setOrder(2);
+	bag_3.setOrder(3);
+	bag_4.setOrder(4);
+	bag_5.setOrder(5);
+	bag_6.setOrder(6);
+	bag_7.setOrder(7);
+	bag_8.setOrder(8);
+	bag_9.setOrder(9);
 	//开始定义Boss技能	1:攻击 2:护盾 3:加血
 	kanmendashu.setSkill1("呼叫120", 50,3);
 	kanmendashu.setSkill2("关门", 60,2);
@@ -86,7 +112,7 @@ int main()
 		case 3:Map(); break;
 		case 4:Save(); break;
 		case 5:About(); break;
-		default:cout << "输入错误\n\n";
+		default:;
 		}
 	}
 	return 0;
@@ -103,7 +129,7 @@ void Role(int GongJi_, int FangYu_, int HP_, int Money_, int Level_, int Exp_)
 	cout << "防御力:" << FangYu << "；\n\n";
 	cout << "等级:" << Level << "级；\n";
 	cout << "经验值:" << Exp << "/" << MaxExp << "；\n\n";
-	cout << "钢镚子:" << Money << "角；\n";
+	cout << "钢镚子:" << Money / 10 << " 元 " << Money % 10 << " 角；\n";
 	cout << endl;
 	system("pause");
 	system("cls");
@@ -358,85 +384,149 @@ void Fighting(Boss boss)
 void About()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.13" << endl;
+	cout << "版本：1.14" << endl;
 	system("pause");
 	system("cls");
 }
 void Bag()
 {
+	bool type = true;
 	while (1 == 1)
 	{
-		cout << "1)" << endl;
-		cout << "2)" << endl;
-		cout << "3)" << endl;
-		cout << "4)" << endl;
-		cout << "5)" << endl;
-		cout << "6)" << endl;
-		cout << "7)" << endl;
-		cout << "8)" << endl;
-		cout << "9)" << endl;
-		cout << endl << "钢崩子: " << Money << " 角" << endl << endl;
+		if (type == true)
+		{
+			cout << "装备：\n";
+			cout << "1)" << endl;
+			cout << "2)" << endl;
+			cout << "3)" << endl;
+			cout << "4)" << endl;
+			cout << "5)" << endl;
+			cout << "6)" << endl;
+			cout << "7)" << endl;
+			cout << "8)" << endl;
+			cout << "9)" << endl;
+			cout << endl << "钢镚子: " << Money / 10 << " 元 " << Money % 10 << " 角" << endl << endl;
 
-		cout << "1~9）选择物品 0)返回" << endl;
-		cin >> anjian;
-		system("cls");
-		if (anjian == 1)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
+			cout << "1~9）选择物品 11)装备 12）道具 0)返回" << endl;
+			cin >> anjian;
 			system("cls");
+
+			if (anjian == 1)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 2)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 3)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 4)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 5)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 6)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 7)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 8)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 9)
+			{
+				cout << "该处没有物品" << endl;
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 11)
+			{
+				type = true;
+			}
+			else if (anjian == 12)
+			{
+				type = false;
+			}
+			else if (anjian == 0)
+			{
+				break;
+			}
 		}
-		else if (anjian == 2)
+		else
 		{
-			cout << "该处没有物品" << endl;
-			system("pause");
+			cout << "道具：\n";
+			
+			cout << "1)" << bag_1.getName() << endl;
+			cout << "2)" << bag_2.getName() << endl;
+			cout << "3)" << bag_3.getName() << endl;
+			cout << "4)" << bag_4.getName() << endl;
+			cout << "5)" << bag_5.getName() << endl;
+			cout << "6)" << bag_6.getName() << endl;
+			cout << "7)" << bag_7.getName() << endl;
+			cout << "8)" << bag_8.getName() << endl;
+			cout << "9)" << bag_9.getName() << endl;
+			cout << endl << "钢镚子: " << Money / 10 << " 元 " << Money % 10 << " 角" << endl << endl;
+
+			cout << "1~9）选择物品 11)装备 12）道具 0)返回" << endl;
+			cin >> anjian;
 			system("cls");
-		}
-		else if (anjian == 3)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 4)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 5)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 6)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 7)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 8)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 9)
-		{
-			cout << "该处没有物品" << endl;
-			system("pause");
-			system("cls");
-		}
-		else if (anjian == 0)
-		{
-			break;
+
+			if (anjian == 1)
+				Show_object_dj(&bag_1);
+			else if (anjian == 2)
+				Show_object_dj(&bag_2);
+			else if (anjian == 3)
+				Show_object_dj(&bag_3);
+			else if (anjian == 4)
+				Show_object_dj(&bag_4);
+			else if (anjian == 5)
+				Show_object_dj(&bag_5);
+			else if (anjian == 6)
+				Show_object_dj(&bag_6);
+			else if (anjian == 7)
+				Show_object_dj(&bag_7);
+			else if (anjian == 8)
+				Show_object_dj(&bag_8);
+			else if (anjian == 9)
+				Show_object_dj(&bag_9);
+			else if (anjian == 11)
+			{
+				type = true;
+			}
+			else if (anjian == 12)
+			{
+				type = false;
+			}
+			else if (anjian == 0)
+			{
+				break;
+			}
 		}
 
 	}
@@ -735,6 +825,214 @@ void LevelUp(int _exp)
 	}
 	
 
+}
+void Get_object_dj(Object_dj *dj)
+{
+	
+	//判断是否已有该物品，若已有，数量+1
+	if (bag_1.getID() == dj->getID())
+	{
+		bag_1.setNumber(bag_1.getNumber() + 1);
+	}
+	else if (bag_2.getID() == dj->getID())
+	{
+		bag_2.setNumber(bag_2.getNumber() + 1);
+	}
+	else if (bag_3.getID() == dj->getID())
+	{
+		bag_3.setNumber(bag_3.getNumber() + 1);
+	}
+	else if (bag_4.getID() == dj->getID())
+	{
+		bag_4.setNumber(bag_4.getNumber() + 1);
+	}
+	else if (bag_5.getID() == dj->getID())
+	{
+		bag_5.setNumber(bag_5.getNumber() + 1);
+	}
+	else if (bag_6.getID() == dj->getID())
+	{
+		bag_6.setNumber(bag_6.getNumber() + 1);
+	}
+	else if (bag_7.getID() == dj->getID())
+	{
+		bag_7.setNumber(bag_7.getNumber() + 1);
+	}
+	else if (bag_8.getID() == dj->getID())
+	{
+		bag_8.setNumber(bag_8.getNumber() + 1);
+	}
+	else if (bag_9.getID() == dj->getID())
+	{
+		bag_9.setNumber(bag_9.getNumber() + 1);
+	}
+	//判断背包的哪个位置为空位，将物品添加至空位
+	else if (bag_1.getNumber() == 0)
+	{
+		bag_1.setID(dj->getID());
+		bag_1.setName(dj->getName());
+		bag_1.setExplain(dj->getExplain());
+		bag_1.setPrice(dj->getPrice());
+		bag_1.setNumber(1);
+	}
+	
+	
+	else if (bag_2.getNumber() == 0)
+	{
+		bag_2.setID(dj->getID());
+		bag_2.setName(dj->getName());
+		bag_2.setExplain(dj->getExplain());
+		bag_2.setPrice(dj->getPrice());
+		bag_2.setNumber(1);
+	}
+	
+	
+	else if (bag_3.getNumber() == 0)
+	{
+		bag_3.setID(dj->getID());
+		bag_3.setName(dj->getName());
+		bag_3.setExplain(dj->getExplain());
+		bag_3.setPrice(dj->getPrice());
+		bag_3.setNumber(1);
+	}
+	
+	else if (bag_4.getNumber() == 0)
+	{
+		bag_4.setID(dj->getID());
+		bag_4.setName(dj->getName());
+		bag_4.setExplain(dj->getExplain());
+		bag_4.setPrice(dj->getPrice());
+		bag_4.setNumber(1);
+	}
+	
+	
+	else if (bag_5.getNumber() == 0)
+	{
+		bag_5.setID(dj->getID());
+		bag_5.setName(dj->getName());
+		bag_5.setExplain(dj->getExplain());
+		bag_5.setPrice(dj->getPrice());
+		bag_5.setNumber(1);
+	}
+	
+	else if (bag_6.getNumber() == 0)
+	{
+		bag_6.setID(dj->getID());
+		bag_6.setName(dj->getName());
+		bag_6.setExplain(dj->getExplain());
+		bag_6.setPrice(dj->getPrice());
+		bag_6.setNumber(1);
+	}
+	
+	
+	else if (bag_7.getNumber() == 0)
+	{
+		bag_7.setID(dj->getID());
+		bag_7.setName(dj->getName());
+		bag_7.setExplain(dj->getExplain());
+		bag_7.setPrice(dj->getPrice());
+		bag_7.setNumber(1);
+	}
+	
+	
+	else if (bag_8.getNumber() == 0)
+	{
+		bag_8.setID(dj->getID());
+		bag_8.setName(dj->getName());
+		bag_8.setExplain(dj->getExplain());
+		bag_8.setPrice(dj->getPrice());
+		bag_8.setNumber(1);
+	}
+	
+	
+	else if (bag_9.getNumber() == 0)
+	{
+		bag_9.setID(dj->getID());
+		bag_9.setName(dj->getName());
+		bag_9.setExplain(dj->getExplain());
+		bag_9.setPrice(dj->getPrice());
+		bag_9.setNumber(1);
+	}
+	
+
+	
+	
+	
+	
+	else
+		cout << "背包已满！";
+}
+void Show_object_dj(Object_dj *dj)
+{
+	if (dj->getNumber() != 0)
+	{
+		while (dj->getNumber() != 0)
+		{
+			cout << "名称：" << dj->getName() << endl;
+			cout << "介绍：" << dj->getExplain() << endl;
+			cout << "数量：" << dj->getNumber() << " 个"<< endl;
+			cout << "售价：" << dj->getPrice() << " 角/个" << endl;
+			cout << "1)使用 2)出售 3)返回" << endl;
+			cin >> anjian;
+			system("cls");
+			if (anjian == 1)
+			{
+				cout << "该物品不能使用";
+				system("pause");
+				system("cls");
+			}
+			else if (anjian == 2)
+			{
+				while (true)
+				{
+					cout << "名称：" << dj->getName() << endl;
+					cout << "介绍：" << dj->getExplain() << endl;
+					cout << "数量：" << dj->getNumber() << " 个" << endl;
+					cout << "售价：" << dj->getPrice() << " 角/个" << endl;
+					cout << "请输入您要删除的数量" << endl;
+					cin >> anjian;
+					system("cls");
+					if (anjian > dj->getNumber()||anjian < 0)
+					{
+						cout << "哎哎,别着急，数字都打错了" << endl;
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						Money += anjian*dj->getPrice();
+						dj->setNumber(dj->getNumber() - anjian); 
+						
+						cout << "名称：" << dj->getName() << endl;
+						cout << "介绍：" << dj->getExplain() << endl;
+						cout << "数量：" << dj->getNumber() << " 个" << endl;
+						cout << "售价：" << dj->getPrice() << " 角/个" << endl; 
+						cout << "你卖掉了" << anjian << "个" << xuantie.getName() << ",获得了" << anjian*xuantie.getPrice() << "毛。"<<endl;
+						if (dj->getNumber() == 0)
+						{
+							dj->setName("");
+							dj->setExplain("");
+							dj->setID(0);
+							dj->setPrice(0);
+						}
+						system("pause");
+						system("cls");
+						break;
+					}
+				}
+			}
+			else if (anjian == 3)
+			{
+				break;
+			}
+		}
+	}
+	else
+	{
+		cout << "该处没有物品" << endl;
+		system("pause");
+		system("cls");
+	}
 }
 void CheckName()
 {
