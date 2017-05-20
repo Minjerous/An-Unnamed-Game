@@ -1,6 +1,9 @@
 ﻿#include <iostream>
+#include <string> 
+
 using namespace std;
 
+string Name;
 
 void XianShi(int GongJi,int FangYu,int HP) 
 {
@@ -10,29 +13,34 @@ void XianShi(int GongJi,int FangYu,int HP)
 	cout<<"你的攻击力为"<<GongJi<<"\n";
 	cout<<"你的防御力为"<<FangYu<<"\n";
 } 
+void Version(float version)
+{
+	cout << "版本：" << version << endl;
+}
+void CheckName()
+{
+	cout << "请输入你的名字:\n";
+	cin >> Name;
+	if (Name == "肖海洋" || Name == "海洋" || Name == "xiaohaiyang" || Name == "XIAOHAIYANG" || Name == "haiyang" || Name == "HAIYANG" || Name == "海洛之神")
+	{
+		cout << "海洋，看见我地理课本了吗？\n\n";
+	}
+	else
+	if (Name == "肖培成" || Name == "培成" || Name == "xiaopeicheng" || Name == "XIAOPEICHENG" || Name == "peicheng" || Name == "PEICHENG")
+	{
+		cout << "培成，实行计划！\n\n";
+	}
+	
+	else
+	{
+		cout << "你好，" << Name << "，欢迎进入这个逗比的游戏。" << endl << endl;
+	}
+}
 int main()
 {
-	string Name;
 	int a;
-	char Yes_or_No;
-	cout<<"版本号：V1.0\n" ;
-	cout<<"先声明下，这是一个很无趣的游戏.\n";
-	cout<<"你确定要玩吗？（Y/N）\n";
-	cin>> Yes_or_No;
-	if (Yes_or_No!='Y'&&Yes_or_No!='y')
-		cout<<"退出中..." ;
-	else
-	
-	cout<<"请输入你的名字:\n";
-	cin>>Name;
-	if(Name=="肖海洋"||Name=="海洛之神"||Name=="xiaohaiyang")
-	{
-		cout<<"海洋，看见我地理课本了吗？\n\n" ;
-	} 
-	else 
-	{
-		cout<<"你好，"<<Name<<"，欢迎进入这个逗比的游戏。"<<endl<<endl ;
-	}
+	Version(1.01f);
+	CheckName();
 	
 	int HP=100;
 	int GongJi=20;
