@@ -13,13 +13,13 @@ string Name;
 int Hp = 50, Mp = 50, GongJi = 10, FangYu = 0,BaoJi=0;
 int Level = 1, Exp = 0, MaxExp = 10;
 int Money = 0;
-//Skill 对象( _名称, _伤害, _耗魔, _等级 = 0) :名称(_名称), 伤害(_伤害), 耗魔(_耗魔), 等级(_等级){}
-Skill skill_1("", 0, 0);
-Skill skill_2("", 0, 0);
-Skill skill_3("", 0, 0);
-Skill skill_4("", 0, 0);
-Skill putonggongji("普通攻击", 80, 0,1);
-Skill zhuangji("撞击", 50, 0);
+//Skill 对象( _名称, _伤害, _耗魔, _升级花费,_等级 = 0) :名称(_名称), 伤害(_伤害), 耗魔(_耗魔), 等级(_等级){}
+Skill skill_1("", 0, 0, 0);
+Skill skill_2("", 0, 0, 0);
+Skill skill_3("", 0, 0, 0);
+Skill skill_4("", 0, 0, 0);
+Skill putonggongji("普通攻击", 80, 0,100,1);
+Skill zhuangji("撞击", 50, 2,10);
 //Guanqia 对象( _序号,  _名称,  _是否开启 = 0,  _是否占领 = 0) :序号(_序号), 名称(_名称), 是否开启_是否开启), 是否占领(_是否占领){}
 Guanqia a_a(1, "大操场  ",1); 
 Guanqia a_b(2, "大门    ");
@@ -55,11 +55,12 @@ void Bag_Show_dj(Object_dj *dj);
 void Bag_Get_dj(Object_dj *dj);
 void Bag_Get_zb();
 void Skill_Show();
-void Skill_Show_skill(Skill _skill);
+void Skill_Showskill(Skill _skill);
 void Skill_Study();
 void Skill_Study_output(int _number,Skill _skill);
 void Skill_Study_skill(Skill _skill);
 void Map_Show();
+void Settings_Show();
 void Save_Show();
 void About_Show();
 void Exit_Show();
@@ -81,6 +82,8 @@ int main()
 	skill_1.setHurt(putonggongji.getHurt());
 	skill_1.setName(putonggongji.getName());
 	skill_1.setMp(putonggongji.getMp());
+	skill_1.setLevel(putonggongji.getLevel());
+	skill_1.setLevelupmoney(putonggongji.getLevelupmoney());
 
 	while (true)
 	{
@@ -109,7 +112,7 @@ int main()
 	while (true)
 	{
 		cout << "请选择你要做什么：\n";
-		cout << "1)角色\n2)背包\n3)技能\n4)地图\n5)保存\n6)关于\n7)退出\n";
+		cout << "1)角色\n2)背包\n3)技能\n4)地图\n5)设置\n6)保存\n7)关于\n8)退出\n";
 		cin >> anjian;
 		system("cls");
 		switch (anjian)
@@ -118,9 +121,10 @@ int main()
 		case 2:Bag_Show(); break;
 		case 3:Skill_Show(); break;
 		case 4:Map_Show(); break;
-		case 5:Save_Show(); break;
-		case 6:About_Show(); break;
-		case 7:Exit_Show(); if (anjian == 1) return 0; break;
+		case 5:Settings_Show(); break;
+		case 6:Save_Show(); break;
+		case 7:About_Show(); break;
+		case 8:Exit_Show(); if (anjian == 1) return 0; break;
 		default:;
 		}
 	}
@@ -556,7 +560,7 @@ void Bag_Show_dj(Object_dj *dj)
 void About_Show()
 {
 	cout << "关于：" << endl;
-	cout << "版本：1.18" << endl;
+	cout << "版本：1.19" << endl;
 	cout << "官网：http://211tzbd.tk" << endl;
 	system("pause");
 	system("cls");
@@ -582,18 +586,15 @@ void Skill_Show()
 		cin >> anjian;
 		system("cls");
 		if (anjian == 1)
-			Skill_Show_skill(skill_1);
+			Skill_Showskill(skill_1);
 		else if (anjian == 2)
-			Skill_Show_skill(skill_2);
+			Skill_Showskill(skill_2);
 		else if (anjian == 3)
-			Skill_Show_skill(skill_3);
+			Skill_Showskill(skill_3);
 		else if (anjian == 4)
-			Skill_Show_skill(skill_4);
-
+			Skill_Showskill(skill_4);
 		else if (anjian == 5)
-		{
 			Skill_Study();
-		}
 		else if (anjian == 6)
 		{
 			cout << "该功能未开启\n";
@@ -606,12 +607,11 @@ void Skill_Show()
 			break;
 		}
 	}
-	
-
 }
-void Skill_Show_skill(Skill _skill)
+void Skill_Showskill(Skill _skill)
 {
 	cout << anjian << ")" << _skill.getName() << endl;
+	cout << "等级：" << _skill.getLevel() << endl;
 	cout << "威力：" << _skill.getHurt() << endl;
 	cout << "耗蓝：" << _skill.getMp() << endl;
 	system("pause");
@@ -628,7 +628,6 @@ void Skill_Study_output(int _number,Skill _skill)
 }
 void Skill_Study()
 {
-	
 	Skill_Study_output(1, zhuangji);
 	cout << "1~9)选择技能 0)返回\n";
 	cin >> anjian;
@@ -642,25 +641,20 @@ void Skill_Study_skill(Skill _skill)
 {
 	cout << anjian << ")" << _skill.getName() << endl;
 	if (_skill.getLevel() > 0)
-	{
-		cout << "状态：已学习 Lv:" << _skill.getLevel() << endl;
-
-		cout << "目前等级：\n";
-		cout << "\t威力：" << _skill.getHurt() << endl;
-		cout << "\t耗蓝：" << _skill.getMp() << endl;
-
-		cout << "下一等级：\n";
-		cout << "\t威力：" << _skill.getHurt() << endl;
-		cout << "\t耗蓝：" << _skill.getMp() << endl;
-	}
+		cout << "状态：已学习\n升级条件：" << _skill.getLevelupmoney() << "角\n";
 	else
-	{
-		cout << "状态：未学习 " << endl;
-
-		cout << "下一等级：\n";
+		cout << "状态：未学习\n学习条件：" << _skill.getLevelupmoney() << "角\n";
+		cout << "目前等级：\n";
+		cout << "\t等级：" << _skill.getLevel() << endl;
 		cout << "\t威力：" << _skill.getHurt() << endl;
 		cout << "\t耗蓝：" << _skill.getMp() << endl;
-	}
+
+		cout << "下一等级：\n";
+		cout << "\t等级：" << _skill.getLevel() +1<< endl;
+		cout << "\t威力：" << _skill.getHurt() << endl;
+		cout << "\t耗蓝：" << _skill.getMp() << endl;
+	
+	
 
 	system("pause");
 	system("cls");
@@ -668,6 +662,31 @@ void Skill_Study_skill(Skill _skill)
 
 }
 
+void Settings_Show()
+{
+	while (true)
+	{
+		cout << "设置：\n" << "1.修改游戏颜色\n2.返回\n";
+		cin >> anjian;
+		system("cls");
+		if (anjian == 1)
+		{
+			cout << "0=黑色\t\t8=灰色\n1=蓝色\t\t9=淡蓝色\n2=绿色\t\tA=淡绿色\n3=浅绿色\tB=淡浅绿色\n4=红色\t\tC=淡红色\n5=紫色\t\tD=淡紫色\n6=黄色\t\tE=淡黄色\n7=白色\t\tF=亮白色\n\n";
+			char color[9] = "color ";
+			cout << "你想把背景改为什么颜色（填数字或字母）\n";
+			cin >> color[6];
+			cout << "你想把文字改为什么颜色（填数字或字母）\n";
+			cin >> color[7];
+			system(color); 
+			system("cls");
+			cout << "设置成功！\n";
+			system("pause");
+			system("cls");
+		}
+		else if (anjian == 2)
+			break;
+	}
+}
 void Save_Show()
 {
 	cout << "保存：" << endl;
