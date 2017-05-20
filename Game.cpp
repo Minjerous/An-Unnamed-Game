@@ -9,13 +9,14 @@ int Hp = 50, GongJi = 10, FangYu = 0;
 int Level = 1, Exp = 0; int MaxExp;
 int Money = 0;
 
-void Bag();
-void Map();
-void About();
-void Role(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_); 
-void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_);
-void CheckName();
-
+class Skill
+{
+	public:
+		string name;
+		int hurt;
+		int number;
+};
+Skill putonggongji = {"普通攻击",80,1}; 
 class Guanqia
 {
 	private:
@@ -24,6 +25,10 @@ class Guanqia
 		bool zhanling;
 		bool kaiqi; 
 	public:
+		int getkaiqi()
+		{
+			return kaiqi;
+		}
 		void init(int _number,string _name)
 		{
 			name = _name;
@@ -50,27 +55,35 @@ class Guanqia
 				cout<<"未开启\n";
 			}
 		}
-		void set(int _zhanling,int _kaiqi)//更改是否开启或占领 
+		void set(bool _zhanling,bool _kaiqi)//更改是否开启或占领 
 		{
 			zhanling = _zhanling;
 			kaiqi = _kaiqi;
 		}
 };
 Guanqia a_a;Guanqia a_b;Guanqia a_c;Guanqia a_d;Guanqia a_e;Guanqia a_f;Guanqia a_g;Guanqia a_h;Guanqia a_i;Guanqia a_j;
-class boss
+class Boss
 {
 	public:
 		string name;
 		int Hp;
 		int GongJi;
 		int FangYu;
-		class skill
-		{
-			string name;
-			int hurt;
-			
-		};
+		
+				string skill_name;
+				int skill_hurt;
+		
 };
+Boss kanmendashu = {"看门大叔",100,20,0,"俺不起来了，俺不活了",20};
+void Bag();
+void Map();
+void About();
+void Fighting(Boss boss);
+void Role(int GongJi_, int FangYu_, int HP_,int Money_,int Level_,int Exp_); 
+void LevelUp(int GongJi_, int FangYu_, int HP_, int Level_, int Exp_);
+void CheckName();
+
+
 int main()
 {
 	CheckName();
@@ -108,11 +121,42 @@ int main()
 }
 
 
-
+void Fighting(Guanqia guanqia,Guanqia guanqia_next,Boss boss)
+{
+	int fight_role_hp = Hp;
+	int fight_boss_hp = boss.Hp;
+	while(1 == 1)
+	{
+		cout<<Name<<"\tVS\t"<<boss.name<<endl;
+		cout<<Name<<"的生命为"<<fight_role_hp<<"/"<<Hp<<endl;
+		cout<<boss.name<<"的生命为"<<fight_boss_hp<<"/"<<boss.Hp<<endl;
+		cout<<"请选择技能：\n";
+		cout<<"1)"<<putonggongji.name<<endl;
+		cin>>anjian;
+		if(anjian == 1)
+		{
+			system("cls");
+			fight_boss_hp = fight_boss_hp - putonggongji.hurt / 100 * GongJi;
+			if(fight_boss_hp <= 0)
+			{
+				fight_boss_hp = 0;
+			}
+			
+			if(fight_boss_hp == 0)
+			{
+				cout<<"你胜利了";
+				
+				guanqia.set(1,1);
+				guanqia_next.set(0,1); 
+			}
+			
+		}
+	}
+}
 void About()
 {
 	cout<<"关于："<<endl; 
-	cout << "版本：1.10" << endl;
+	cout << "版本：1.11" << endl;
 	system("pause"); 
 	system("cls"); 
 }
@@ -144,6 +188,8 @@ void Bag()
 		cout<<"7)"<<endl;
 		cout<<"8)"<<endl;
 		cout<<"9)"<<endl;
+		cout<<endl<<"钢崩子: "<<Money<<" 角"<<endl<<endl;
+		 
 		cout<<"1~9）选择物品 0)返回"<<endl; 
 		cin>>anjian;
 		system("cls") ;
@@ -290,24 +336,32 @@ void Map()
 																		}
 																		else if (anjian == 2)
 																		{
-																			cout << "你已经到达了学校大门\n";
-																			system("pause"); 
-																			system("cls"); 
-																			cout << "你发现了一个看门的\n";
-																			system("pause"); 
-																			system("cls"); 
-																			cout << "是否迎战\n1)是 0)否\n";
-																			cin >> anjian ;
-																			system("cls"); 
-																			if(anjian == 1)
+																			if( a_b.getkaiqi() == 1 ) 
 																			{
-																				cout<<"正在努力开发战斗资源z中，稍安勿躁。。。\n";
-																				system("pause");
-																				system("cls") ;
+																				cout << "你已经到达了学校大门\n";
+																				system("pause"); 
+																				system("cls"); 
+																				cout << "你发现了一个看门的\n";
+																				system("pause"); 
+																				system("cls"); 
+																				cout << "是否迎战\n1)是 0)否\n";
+																				cin >> anjian ;
+																				system("cls"); 
+																				if(anjian == 1)
+																				{
+																					Fighting(a_b,a_c,kanmendashu);
+																					system("pause");
+																					system("cls") ;
+																				}
+																				else if(anjian == 0)
+																				{
+																					cout<<"你失败了\n";
+																					system("pause");
+																					system("cls");
+																				}
 																			}
-																			else if(anjian == 0)
-																			{
-																				cout<<"你失败了\n";
+																			else {
+																				cout<<"该关卡未开启\n";
 																				system("pause");
 																				system("cls");
 																			}
